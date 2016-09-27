@@ -1,0 +1,22 @@
+<div class="offices">
+  <div class="background">
+    <h1 style="color: white; font-size: 50px">All Offices</h1>
+  </div>
+
+  <div style="margin: 30px" class="form-group text-center">
+    <%= link_to "Add new office", new_office_path, class: "btn btn-success btn-lg" %>
+  </div>
+
+  <div class="office-array text-center">
+    <% @offices.each do |office| %>
+
+    <div class="office-item">
+      <h3 class="font-feature-1"><%= office.company %></h3>
+      <%= link_to "View: #{office.company}", office_branches_path(office), class: "btn btn-primary" %>
+      <div style="margin: 5px" class="edit-office">
+        <%= link_to "Edit: #{office.company}", edit_office_path(office), class: "btn btn-primary" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

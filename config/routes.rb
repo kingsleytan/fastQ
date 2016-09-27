@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 root to: 'landing#index'
 get :about, to: 'static_pages#about'
 
+resources :offices do
+  resources :branches
+end
+resources :services
+resources :tickets
+
 resources :users, only: [:show, :new, :edit, :create, :update]
 resources :sessions, only: [:new, :create, :destroy]
 resources :password_resets, only: [:new, :create, :edit, :update]

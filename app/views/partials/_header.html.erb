@@ -15,6 +15,14 @@
         <li><%= link_to "About", about_path %></li>
         <li><a href="#">Featues<span class="sr-only">(current)</span></a></li>
         <li><a href="#">Services<span class="sr-only">(current)</span></a></li>
+        <% if current_user %>
+        <li><%= link_to current_user.username, user_path(current_user) %></li>
+        <li><%= link_to "Logout", session_path(current_user), method: :delete %></li>
+        <% else %>
+        <li><%= link_to "Register", new_user_path %></li>
+        <li><%= link_to "Login", new_session_path %></li>
+        <% end %>
+
       </ul>
     </div>
   </div>

@@ -1,0 +1,37 @@
+<div class="btn btn-success" data-toggle="modal" data-target="#braintree_form">
+  Pay
+</div>
+
+<div class="modal fade" id="braintree_form">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <h3 class="modal-title">Payment Form</h3>
+      <div class="modal-body">
+        <div class="form">
+          <%= form_for(:payment, url: checkout_path, html: { id: "payment-form" } ) do |f| %>
+          <div class="form-group">
+          </div>
+
+          <div class="form-group", id="dropin-container">
+          </div>
+
+          <div class="form-group">
+            <h4>Amount : <%= number_to_currency(@total_price, :unit => 'RM') %></h4>
+          </div>
+
+          <div class="form-group">
+            <%= f.submit "Pay", class: "btn btn-success btn-lg" %>
+          </div>
+          <% end %>
+        </div>
+
+        <script>
+        braintree.setup("<%=@token%>", 'dropin', {
+          container: 'dropin-container',
+          form: 'payment-form'
+        });
+        </script>
+      </div>
+    </div>
+  </div>
+</div>

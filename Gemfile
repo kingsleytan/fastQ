@@ -34,8 +34,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'braintree', '~> 2.66.0'
 
-gem "font-awesome-rails"
-
 gem 'pundit'
 
 gem 'friendly_id', github: 'norman/friendly_id'

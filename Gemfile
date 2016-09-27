@@ -30,7 +30,7 @@ gem 'braintree', '~> 2.66.0'
 gem "font-awesome-rails"
 gem 'bootstrap-sass'
 gem 'pundit'
-# gem 'friendly_id', github: 'norman/friendly_id'
+gem 'friendly_id', github: 'norman/friendly_id'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -51,6 +51,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem 'bootstrap-sass'
-gem "font-awesome-rails"

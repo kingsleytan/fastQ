@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     resources :branches
   end
   resources :services
-  get :tickets
+  resources :tickets
 end

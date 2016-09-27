@@ -1,4 +1,4 @@
-class branchesController < ApplicationController
+class BranchesController < ApplicationController
   # before_action :authenticate!, only: [:create, :edit, :update, :new, :destroy]
 
   def index

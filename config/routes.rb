@@ -1,3 +1,12 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+# for Braintree checkout
+  get :checkout, to: "checkout#show"
+  post :checkout, to: "checkout#payment"
+
+#for Billpliz checkout
+  scope '/webhooks', controller: :webhooks do
+    post 'payment_callback', to: 'webhooks#payment_callback', as: :payment_callback
+  end
+
 end

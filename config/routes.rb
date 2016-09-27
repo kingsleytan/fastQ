@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+root to: 'landing#index'
+get :about, to: 'static_pages#about'
+
 # for Braintree checkout
   get :checkout, to: "checkout#show"
   post :checkout, to: "checkout#payment"

@@ -1,0 +1,26 @@
+<div class="edit">
+
+  <div class="background-edit">
+    <h1 style="color: black"> Edit: <%= @office.company %></h1>
+  </div>
+
+  <div class="form-edit">
+    <%= form_for(@office, url: office_path(@office), html: { id: "office-update-form" }) do |f| %>
+    <h1 class="text-center">
+      Update Your office Here
+    </h1>
+
+    <div class="form-group">
+      <h4> <%= f.label :company_field, "Company" %> </h4>
+      <%= f.text_field :company, required: true, id: "office_company_field", class: 'form-control' %>
+    </div>
+
+    <div class="font-feature-edit text-center">
+      <%= link_to "Back to all offices", offices_path, class: "btn btn-info"%>
+      <%= f.submit "Update office", class: "btn btn-success" %>
+      <%= link_to "Delete office", office_path(@office), method: :delete, class: "btn btn-danger", data: { confirm: "Delete?"} %>
+    </div>
+    <% end %>
+  </div>
+
+</div>

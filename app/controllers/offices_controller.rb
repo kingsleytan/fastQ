@@ -1,7 +1,7 @@
 class OfficesController < ApplicationController
 
   def index
-    @offices = Office.order(:id).page params[:page]
+    @offices = Office.order(:id).all
   end
 
   def new
@@ -10,7 +10,7 @@ class OfficesController < ApplicationController
   end
 
   def create
-    @office = current_user.offices.build(office_params)
+    @office = Office.new(office_params)
     # authorize @office
     if @office.save
       flash[:success] = "You've created a new office."

@@ -2,7 +2,7 @@ class BranchesController < ApplicationController
   # before_action :authenticate!, only: [:create, :edit, :update, :new, :destroy]
 
   def index
-    @office = Office.includes(:branches).find(params[:office_id])
+    @office = Office.includes(:branches).friendly.find(params[:office_id])
     # @branches = @office.branches.order("created_at DESC")
     @branches = Branch.all
     if params[:search]
@@ -13,12 +13,12 @@ class BranchesController < ApplicationController
   end
 
   def new
-    @office = Office.find(params[:office_id])
+    @office = Office.friendly.find(params[:office_id])
     @branch = Branch.new
   end
 
   def create
-    @office = Office.find(params[:office_id])
+    @office = Office.friendly.find(params[:office_id])
     @branch = current_user.branches.build(branch_params.merge(office_id: params[:office_id]))
 
     if @branch.save
@@ -31,13 +31,13 @@ class BranchesController < ApplicationController
   end
 
   def edit
-    @branch = Branch.find(params[:id])
+    @branch = Branch.friendly.find(params[:id])
     @office = @branch.office
     # authorize @branch
   end
 
   def update
-    @branch = Branch.find(params[:id])
+    @branch = Branch.friendly.find(params[:id])
     @office = @branch.office
     # authorize @branch
     if @branch.update(branch_params)
@@ -48,7 +48,7 @@ class BranchesController < ApplicationController
   end
 
   def destroy
-    @branch = Branch.find_by(id: params[:id])
+    @branch = Branch.friendly.find_by(id: params[:id])
     @office = @branch.office
     # authorize @branch
     if @branch.destroy

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :authenticate!, only: [:edit, :update]
 
   def show
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
   end
 
   def new
@@ -15,8 +15,9 @@ class UsersController < ApplicationController
     # binding.pry
 
     if @user.save
-      flash[:success] = "Welcome to FastQ."
+      session[:id] = @user.id
       redirect_to @user
+      flash[:success] = "Welcome to FastQ."
     else
       flash[:danger] = @user.errors.full_messages
       render :new

@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927090029) do
+ActiveRecord::Schema.define(version: 20160928042918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "branches", force: :cascade do |t|
     t.string   "name"
-    t.integer  "office_ID"
+    t.integer  "office_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20160927090029) do
   create_table "services", force: :cascade do |t|
     t.integer  "currentqueue"
     t.integer  "currentticket"
-    t.integer  "branch_ID"
+    t.integer  "branch_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "type"
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 20160927090029) do
 
   create_table "tickets", force: :cascade do |t|
     t.integer  "number"
-    t.integer  "service_ID"
-    t.integer  "office_ID"
+    t.integer  "service_id"
+    t.integer  "office_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

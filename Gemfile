@@ -16,6 +16,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'coffee-rails', '~> 4.2'
 
+gem 'figaro'
+
 gem 'jquery-rails'
 
 gem 'turbolinks', '~> 5'
@@ -28,13 +30,17 @@ gem 'bootstrap-sass'
 
 gem "font-awesome-rails"
 
+gem 'bcrypt', '~> 3.1.7'
+
+gem 'braintree', '~> 2.66.0'
+
+gem 'pundit'
+
+gem 'friendly_id', github: 'norman/friendly_id'
+
 group :production do
   gem 'rails_12factor'
 end
-
-group :production do    gem 'rails_12factor'  end
-
-group :production do    gem 'rails_12factor'  end
 
 group :development, :test do
   gem 'byebug', platform: :mri

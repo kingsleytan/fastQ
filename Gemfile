@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rufus-scheduler'
 
-gem 'bootstrap'
-
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 
 gem 'pg', '~> 0.18'
@@ -37,6 +35,8 @@ gem 'braintree', '~> 2.66.0'
 gem 'pundit'
 
 gem 'friendly_id', github: 'norman/friendly_id'
+
+gem 'country_select'
 
 group :production do
   gem 'rails_12factor'

@@ -1,0 +1,14 @@
+<%= form_for(@branches, url: edit_office_branch_path, html: { id: "branch-edit-form" }) do |f| %>
+  <h1 class="text-center">
+    Edit Branch
+  </h1>
+
+  <div class="form-group">
+    <h4> <%= f.label :type_field, "Branch" %> </h4>
+    <%= f.text_field :type, required: true, id: "branch_type_field", class: 'form-control' %>
+  </div>
+
+  <div class="form-group text-center">
+    <%= f.submit "Edit New Branch", class: "btn btn-success btn-lg" %>
+  </div>
+<% end %>

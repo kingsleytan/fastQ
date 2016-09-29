@@ -10,16 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160928063905) do
+ActiveRecord::Schema.define(version: 20160929073738) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "add_slug_to_offices", force: :cascade do |t|
-    t.string   "slug"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "branches", force: :cascade do |t|
     t.string   "name"
@@ -48,11 +42,9 @@ ActiveRecord::Schema.define(version: 20160928063905) do
   end
 
   create_table "services", force: :cascade do |t|
-    t.integer  "currentqueue"
-    t.integer  "currentticket"
     t.integer  "branch_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "type"
     t.string   "slug"
   end
@@ -69,11 +61,11 @@ ActiveRecord::Schema.define(version: 20160928063905) do
     t.string   "password_digest"
     t.string   "username"
     t.string   "image"
-    t.integer  "role"
+    t.integer  "role",                 default: 0
     t.string   "password_reset_token"
     t.datetime "password_reset_at"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "slug"
   end
 

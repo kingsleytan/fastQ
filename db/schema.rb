@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20160928100748) do
     t.datetime "updated_at",           null: false
     t.string   "slug"
     t.string   "country"
+
   end
 
 end

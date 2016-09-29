@@ -1,0 +1,3 @@
+<h1><%= @branch.name%></h1>
+<p><%= @branch.description %></p>
+  <%= link_to "Delete", office_branch_path(@branch), method: :delete, data: { confirm: "Delete?" } %>

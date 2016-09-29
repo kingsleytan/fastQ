@@ -189,7 +189,6 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
-  bootstrap
   bootstrap-sass
   braintree (~> 2.66.0)
   byebug

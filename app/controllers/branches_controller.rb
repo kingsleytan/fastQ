@@ -19,7 +19,7 @@ class BranchesController < ApplicationController
 
   def create
     @office = Office.find(params[:office_id])
-    @branch = current_user.branches.build(branch_params.merge(office_id: params[:office_id]))
+    @branch = @office.branches.build(branch_params)
 
     if @branch.save
       flash[:success] = "You've created a new branch."
@@ -59,6 +59,6 @@ class BranchesController < ApplicationController
   private
 
   def branch_params
-    params.require(:branch).permit(:name)
+    params.require(:branch).permit(:name, :description)
   end
 end

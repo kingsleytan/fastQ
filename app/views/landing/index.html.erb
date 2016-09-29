@@ -8,6 +8,10 @@
       <h2>QUEUE MANAGEMENT. REINVENTED!</h2>
       <h2>Ready To Eliminate Lines? Don't Wait Any Longer. </h2>
 
+      <%= form_tag(method: "get", id: "search-form") do %>
+      <%= search_field_tag :search, params[:search], placeholder: "Search for Services / Offices", class: 'search-bar' %>
+      <label for="search"><i class="fa fa-search fa-2x" aria-hidden="true"></i></label>
+      <% end %>
 
 
     </div>
@@ -93,6 +97,7 @@
 
                       <!-- Start Subscribe Section Title -->
                       <div class="section_title">
+                          <a id="subscribe"></a>
                           <h2>SUBSCRIBE US</h2>
                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
                       </div>

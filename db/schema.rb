@@ -15,12 +15,6 @@ ActiveRecord::Schema.define(version: 20160928100748) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "add_slug_to_offices", force: :cascade do |t|
-    t.string   "slug"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "branches", force: :cascade do |t|
     t.string   "name"
     t.integer  "office_id"
@@ -49,11 +43,9 @@ ActiveRecord::Schema.define(version: 20160928100748) do
   end
 
   create_table "services", force: :cascade do |t|
-    t.integer  "currentqueue"
-    t.integer  "currentticket"
     t.integer  "branch_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "type"
     t.string   "slug"
   end
@@ -71,11 +63,11 @@ ActiveRecord::Schema.define(version: 20160928100748) do
     t.string   "password_digest"
     t.string   "username"
     t.string   "image"
-    t.integer  "role"
+    t.integer  "role",                 default: 0
     t.string   "password_reset_token"
     t.datetime "password_reset_at"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "slug"
     t.string   "country"
 

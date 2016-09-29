@@ -6,12 +6,12 @@ class OfficesController < ApplicationController
 
   def new
     @office = Office.new
-    # authorize @office
+    authorize @office
   end
 
   def create
     @office = Office.new(office_params)
-    # authorize @office
+    authorize @office
     if @office.save
       flash[:success] = "You've created a new office."
       redirect_to offices_path
@@ -23,12 +23,12 @@ class OfficesController < ApplicationController
 
   def edit
     @office = Office.friendly.find(params[:id])
-    # authorize @office
+    authorize @office
   end
 
   def update
     @office = Office.friendly.find(params[:id])
-    # authorize @office
+    authorize @office
     if @office.update(office_params)
       redirect_to office_path(@office)
     else
@@ -38,7 +38,7 @@ class OfficesController < ApplicationController
 
   def destroy
     @office = Office.friendly.find(params[:id])
-    # authorize @office
+    authorize @office
     if @office.destroy
       redirect_to offices_path
     else

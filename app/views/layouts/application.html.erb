@@ -13,6 +13,9 @@
   <div id="header">
     <%= render partial: 'partials/header' %>
   </div>
+  <div class = "flash_messages" id='flash-messages-container'>
+    <%= render partial: "partials/flash_messages" %>
+  </div>
   <div id="wrapper">
     <%= yield %>
   </div>

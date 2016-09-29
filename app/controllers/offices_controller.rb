@@ -22,12 +22,12 @@ class OfficesController < ApplicationController
   end
 
   def edit
-    @office = Office.find(params[:id])
+    @office = Office.friendly.find(params[:id])
     # authorize @office
   end
 
   def update
-    @office = Office.find(params[:id])
+    @office = Office.friendly.find(params[:id])
     # authorize @office
     if @office.update(office_params)
       redirect_to office_path(@office)
@@ -37,7 +37,7 @@ class OfficesController < ApplicationController
   end
 
   def destroy
-    @office = Office.find(params[:id])
+    @office = Office.friendly.find(params[:id])
     # authorize @office
     if @office.destroy
       redirect_to offices_path

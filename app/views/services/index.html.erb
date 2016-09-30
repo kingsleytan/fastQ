@@ -1,0 +1,24 @@
+<% provide(:title, "Services") %>
+
+<div class="services">
+  <div class="background">
+    <h1 style="color: white; font-size: 50px">All Services</h1>
+  </div>
+
+  <!-- <div style="margin: 30px" class="form-group text-center">
+    <%= link_to "Add new office", new_office_path, class: "btn btn-success" %>
+  </div> -->
+
+  <div class="office-array text-center">
+    <% @services.each do |service| %>
+
+    <div class="service-item">
+      <h3 class="font-feature-1"><%= service.type %></h3>
+      <%= link_to "View: #{service.type}", service_path(service), class: "btn btn-primary" %>
+      <div style="margin: 5px" class="edit-office">
+        <%= link_to "Edit: #{service.type}", edit_service_path(service), class: "btn btn-primary" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

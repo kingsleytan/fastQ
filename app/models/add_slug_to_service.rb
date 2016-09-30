@@ -1,0 +1,2 @@
+class AddSlugToService < ApplicationRecord
+end

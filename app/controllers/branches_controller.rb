@@ -14,7 +14,6 @@ class BranchesController < ApplicationController
   def new
     @office = Office.friendly.find(params[:office_id])
     @branch = Branch.new
-    # authorize @branch
   end
 
   def create
@@ -32,9 +31,10 @@ class BranchesController < ApplicationController
   end
 
   def edit
+    # binding.pry
     @branch = Branch.friendly.find(params[:id])
     @office = @branch.office
-    authorize @branch
+    # authorize @branch
   end
 
   def update

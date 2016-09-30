@@ -39,20 +39,21 @@ ActiveRecord::Schema.define(version: 20160929073738) do
     t.string   "company"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "slug"
   end
 
   create_table "services", force: :cascade do |t|
-    t.integer  "currentqueue"
-    t.integer  "currentticket"
     t.integer  "branch_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "type"
+    t.string   "slug"
   end
 
   create_table "tickets", force: :cascade do |t|
     t.integer  "number"
     t.integer  "service_id"
+    t.integer  "office_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -62,11 +63,11 @@ ActiveRecord::Schema.define(version: 20160929073738) do
     t.string   "password_digest"
     t.string   "username"
     t.string   "image"
-    t.integer  "role"
+    t.integer  "role",                 default: 0
     t.string   "password_reset_token"
     t.datetime "password_reset_at"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "slug"
     t.string   "country"
 

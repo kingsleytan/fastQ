@@ -36,6 +36,8 @@ gem 'pundit'
 
 gem 'friendly_id', github: 'norman/friendly_id'
 
+gem 'country_select'
+
 group :production do
   gem 'rails_12factor'
 end

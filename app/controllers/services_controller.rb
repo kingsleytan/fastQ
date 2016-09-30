@@ -1,7 +1,8 @@
 class ServicesController < ApplicationController
 
   def index
-    @services = Service.order(:id).page params[:page]
+    @branch = Branch.includes(:services).find(params[:branch_id])
+    @services = Service.all
   end
 
   def new

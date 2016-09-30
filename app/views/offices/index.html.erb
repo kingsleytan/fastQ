@@ -1,4 +1,5 @@
 <% provide(:title, "Offices") %>
+<h2 div class="jumbotron text-center">Which Office Are you Looking For?</h2>
 
 <div class="offices">
   <div class="background">
@@ -12,9 +13,10 @@
 
     <div class="office-item">
       <h3 class="font-feature-1"><%= office.company %></h3>
-      <%= link_to "View: #{office.company}", office_branches_path(office), class: "btn btn-primary" %>
+      <%= link_to "#{office.company} - Branches", office_branches_path(office), class: "btn btn-primary" %>
       <div style="margin: 5px" class="edit-office">
-        <%= link_to "Edit: #{office.company}", edit_office_path(office), class: "btn btn-primary" %>
+        <br>
+        <%= link_to "Edit: #{office.company}", edit_office_path(office), class: "btn btn-info" %>
       </div>
     </div>
     <% end %>

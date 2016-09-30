@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:id] = @user.id
-      redirect_to @user
+      redirect_to offices_path
       flash[:success] = "Welcome to FastQ."
     else
       flash[:danger] = @user.errors.full_messages

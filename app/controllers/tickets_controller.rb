@@ -1,7 +1,7 @@
 class TicketsController < ApplicationController
 
   def show
-    @nextqueue
+    @ticket = Ticket.find_by()
 
   end
 

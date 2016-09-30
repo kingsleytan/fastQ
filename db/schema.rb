@@ -41,6 +41,13 @@ ActiveRecord::Schema.define(version: 20160929073738) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
   end
 
+  create_table "lineups", force: :cascade do |t|
+    t.integer  "currentqueue"
+    t.integer  "currentticket"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "offices", force: :cascade do |t|
     t.string   "company"
     t.datetime "created_at", null: false
@@ -59,7 +66,6 @@ ActiveRecord::Schema.define(version: 20160929073738) do
   create_table "tickets", force: :cascade do |t|
     t.integer  "number"
     t.integer  "service_id"
-    t.integer  "office_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

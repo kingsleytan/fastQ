@@ -3,12 +3,12 @@
 
 <% @branches.each do |branch| %>
   <div class="branch">
-    <h3><%= branch.name %></h3>
+    <h3> <%= link_to "#{branch.name}", services_path(branch_id: branch.id)%></h3>
     <h5><%= branch.description %></h5>
 
 <% end %>
 
 
 <div style="margin: 30px" class="form-group text-center">
-  <%= link_to "Add new branch", new_office_branch_path, class: "btn btn-success" %>
+  <%= link_to "Add new branch", new_office_branch_path(@office, @branch), class: "btn btn-success" %>
 </div>

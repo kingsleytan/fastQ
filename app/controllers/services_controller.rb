@@ -7,12 +7,12 @@ class ServicesController < ApplicationController
 
   def new
     @service = Service.new
-    # authorize @service
+    authorize @service
   end
 
   def create
     @service = current_user.services.build(service_params)
-    # authorize @service
+    authorize @service
     if @service.save
       flash[:success] = "You've created a new service."
       redirect_to services_path
@@ -24,12 +24,12 @@ class ServicesController < ApplicationController
 
   def edit
     @service = Service.find(params[:id])
-    # authorize @service
+    authorize @service
   end
 
   def update
     @service = Service.find(params[:id])
-    # authorize @service
+    authorize @service
     if @service.update(service_params)
       redirect_to service_path(@service)
     else
@@ -39,7 +39,7 @@ class ServicesController < ApplicationController
 
   def destroy
     @service = service.find(params[:id])
-    # authorize @service
+    authorize @service
     if @service.destroy
       redirect_to services_path
     else

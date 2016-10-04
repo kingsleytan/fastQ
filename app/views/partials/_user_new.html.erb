@@ -1,9 +1,9 @@
-<!-- <div class="modal fade" id="new_user_form">
+<div class="modal fade" id="signup">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
         <%= form_for(user, url: users_path, html: { id: "user-create-form" }) do |f| %>
-          <%= render 'partials/error_messages' %>
+          <%= render partial: 'partials/error_messages', locals: {record: user} %>
 
           <%= f.label :username %>
           <%= f.text_field :username, class: 'form-control', placeholder: 'username' %>
@@ -28,4 +28,4 @@
       </div>
     </div>
   </div>
-</div> -->
+</div>

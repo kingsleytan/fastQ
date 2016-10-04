@@ -1,3 +1,5 @@
+<% provide(:title, "New Branch") %>
+
 <%= form_for(@branch, url: office_branches_path(@office), html: { id: "branch-create-form" }) do |f| %>
   <h1 class="text-center">
     Create Branch

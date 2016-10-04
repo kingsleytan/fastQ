@@ -42,6 +42,7 @@ class BranchesController < ApplicationController
     @office = @branch.office
     authorize @branch
     if @branch.update(branch_params)
+      # binding.pry
       redirect_to office_branches_path(@office)
     else
       redirect_to edit_office_branch_path(@office, @branch)

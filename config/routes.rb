@@ -8,6 +8,7 @@ resources :offices do
 end
 resources :services
 resources :tickets
+resources :products
 
 resources :users, only: [:show, :new, :edit, :create, :update]
 resources :sessions, only: [:new, :create, :destroy]

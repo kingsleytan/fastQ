@@ -1,24 +1,25 @@
 <% provide(:title, "Services") %>
+<h2 div class="jumbotron text-center">Branch Services</h2></div>
 
 <div class="services">
   <div class="background">
     <h1 style="color: white; font-size: 50px">All Services</h1>
   </div>
 
-  <!-- <div style="margin: 30px" class="form-group text-center">
-    <%= link_to "Add new office", new_office_path, class: "btn btn-success" %>
-  </div> -->
-
-  <div class="office-array text-center">
+  <div class="service-array text-center">
     <% @services.each do |service| %>
 
     <div class="service-item">
-      <h3 class="font-feature-1"><%= service.type %></h3>
-      <%= link_to "View: #{service.type}", service_path(service), class: "btn btn-primary" %>
+      <h3 class="font-feature-1"><%= service.name %></h3>
+      <%= link_to "View: #{service.name}", service_path(service), class: "btn btn-primary" %>
       <div style="margin: 5px" class="edit-office">
-        <%= link_to "Edit: #{service.type}", edit_service_path(service), class: "btn btn-primary" %>
+        <%= link_to "Edit: #{service.name}", edit_service_path(service), class: "btn btn-primary" %>
       </div>
     </div>
     <% end %>
+      <div style="margin: 30px" class="form-group text-center">
+        <%= link_to "Add new service", new_service_path(branch_id: @branch.id), class: 'btn btn-success' %>
+        </div>
+        <%= link_to "Back to branches", office_branches_path(@branch.office), class: 'btn btn-info' %>
   </div>
 </div>

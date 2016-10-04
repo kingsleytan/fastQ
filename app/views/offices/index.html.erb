@@ -6,14 +6,11 @@
     <h1 style="color: white; font-size: 50px">All Offices</h1>
   </div>
 
-
-
   <div class="office-array text-center">
     <% @offices.each do |office| %>
-
     <div class="office-item">
-      <h3 class="font-feature-1"><%= office.company %></h3>
-      <%= link_to "#{office.company} - Branches", office_branches_path(office), class: "btn btn-primary" %>
+      <!-- <h3 class="font-feature-1"><%= office.company %></h3> -->
+      <h2><%= link_to "#{office.company} - Branches", office_branches_path(office) %></h3>
       <div style="margin: 5px" class="edit-office">
         <br>
         <%= link_to "Edit: #{office.company}", edit_office_path(office), class: "btn btn-info" %>

@@ -2,9 +2,6 @@ class User < ApplicationRecord
   has_secure_password
 
   enum role: [:user, :moderator, :admin]
-  has_many :offices
-  has_many :branches
-  has_many :services
   has_many :tickets
 
   before_save { self.email = email.downcase }

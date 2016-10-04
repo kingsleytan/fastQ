@@ -6,7 +6,7 @@
   <div class="branch text-center">
     <h3> <%= link_to "#{branch.name}", services_path(branch_id: branch.id) %></h3>
     <h5><%= branch.description %></h5>
-    <%= link_to "Edit: #{branch.name} - Branch", edit_office_branch_path(branch, branch.office), class: "btn btn-primary" %>
+    <%= link_to "Edit: #{branch.name} - Branch", edit_office_branch_path(branch.office, branch), class: "btn btn-primary" %>
 
 <% end %>
 

@@ -18,6 +18,8 @@
   <div class = "flash_messages" id='flash-messages-container'>
     <%= render partial: "partials/flash_messages" %>
   </div>
+  <%= render partial: 'partials/user_new', locals: {user: User.new}  %>
+  <%= render partial: 'partials/session_new' %>
   <div id="wrapper">
     <%= yield %>
   </div>

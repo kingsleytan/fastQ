@@ -3,18 +3,12 @@ class BranchesController < ApplicationController
 
   def index
     @office = Office.includes(:branches).friendly.find(params[:office_id])
-    @branches = Branch.all
-    if params[:search]
-      @branches = Branch.search(params[:search]).order("created_at DESC")
-    else
-      @branches = Branch.all.order('created_at DESC')
-    end
+    @branches = @office.branches
   end
 
   def new
     @office = Office.friendly.find(params[:office_id])
     @branch = Branch.new
-    # authorize @branch
   end
 
   def create
@@ -34,13 +28,13 @@ class BranchesController < ApplicationController
   def edit
     @branch = Branch.friendly.find(params[:id])
     @office = @branch.office
-    authorize @branch
+    # authorize @branch
   end
 
   def update
     @branch = Branch.friendly.find(params[:id])
     @office = @branch.office
-    authorize @branch
+    # authorize @branch
     if @branch.update(branch_params)
       redirect_to office_branches_path(@office)
     else
@@ -49,9 +43,9 @@ class BranchesController < ApplicationController
   end
 
   def destroy
-    @branch = Branch.friendly.find_by(id: params[:id])
+    @branch = Branch.friendly.find(params[:id])
     @office = @branch.office
-    authorize @branch
+    # authorize @branch
     if @branch.destroy
       redirect_to office_branches_path(@office)
     end

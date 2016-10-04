@@ -1,0 +1,2 @@
+class AddSlugToBranch < ApplicationRecord
+end

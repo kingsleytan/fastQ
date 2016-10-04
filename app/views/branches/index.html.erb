@@ -1,10 +1,12 @@
-<h2>Branches</h2>
+<%= provide(:title, "Branches") %>
+<h2 div class=" jumbotron text-center">Find Your Nearest Branch :)</h2>
 
 
 <% @branches.each do |branch| %>
-  <div class="branch">
-    <h3> <%= link_to "#{branch.name}", services_path(branch_id: branch.id)%></h3>
+  <div class="branch text-center">
+    <h3> <%= link_to "#{branch.name}", services_path(branch_id: branch.id) %></h3>
     <h5><%= branch.description %></h5>
+    <%= link_to "Edit: #{branch.name} - Branch", edit_office_branch_path(branch.office, branch), class: "btn btn-primary" %>
 
 <% end %>
 
@@ -12,3 +14,6 @@
 <div style="margin: 30px" class="form-group text-center">
   <%= link_to "Add new branch", new_office_branch_path(@office, @branch), class: "btn btn-success" %>
 </div>
+
+
+<%= link_to "Back to Offices", offices_path, class: 'btn btn-warning' %>

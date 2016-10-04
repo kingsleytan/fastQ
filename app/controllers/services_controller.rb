@@ -1,7 +1,11 @@
 class ServicesController < ApplicationController
 
+  def show
+    # needs a show action
+  end
+
   def index
-    @branch = Branch.includes(:services).friendly.find(params[:branch_id])
+    @branch = Branch.includes(:services).find_by(id: params[:branch_id])
     @services = Service.all
   end
 
@@ -15,22 +19,23 @@ class ServicesController < ApplicationController
     @service = @branch.services.build(service_params)
     # authorize @service
     if @service.save
-      flash.now[:success] = "You've created a new service."
-      render :index
+      flash[:success] = "You've created a new service."
+      binding.pry
+      redirect_to services_path(@branch)
     else
       flash[:danger] = @service.errors.full_messages
-      redirect_to new_service_path
+      redirect_to new_service_path(@branch)
     end
   end
 
   def edit
+    @branch = Branch.friendly.find(params[:id])
     @service = Service.friendly.find(params[:id])
-    authorize @service
+    # authorize @service
   end
 
   def update
     @service = Service.friendly.find(params[:id])
-    authorize @service
     if @service.update(service_params)
       redirect_to service_path(@service)
     else
@@ -39,8 +44,8 @@ class ServicesController < ApplicationController
   end
 
   def destroy
-    @service = service.friendly.find(params[:id])
-    authorize @service
+    @service = Service.friendly.find(params[:id])
+    # authorize @service
     if @service.destroy
       redirect_to services_path
     else

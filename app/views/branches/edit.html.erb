@@ -1,8 +1,12 @@
-<% provide(:title, "Edit Branch") %>
+<% provide(:title, "#{@branch.name}") %>
+
+<div class="background-edit">
+  <h1 style="color: black"> Edit: <%= @branch.name %></h1>
+</div>
 
 <%= form_for(@branch, url: office_branch_path(@branch.office, @branch), html: { id: "branch-edit-form" }) do |f| %>
   <h1 class="text-center">
-    Edit Branch
+    New Branch Name
   </h1>
 
   <div class="form-group">
@@ -11,6 +15,8 @@
   </div>
 
   <div class="form-group text-center">
-    <%= f.submit "Edit New Branch", class: "btn btn-success btn-lg" %>
+    <%= link_to "Back to Branches", office_branches_path, class: "btn btn-info" %>
+    <%= f.submit "Update Branch", class: "btn btn-success btn-lg" %>
+    <%= link_to "Delete Branch", office_branch_path(@branch.office, @branch), method: :delete, class: "btn btn-warning", data: { confirm: "Delete?" } %>
   </div>
 <% end %>

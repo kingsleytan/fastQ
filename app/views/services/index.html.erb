@@ -10,8 +10,8 @@
     <% @services.each do |service| %>
 
     <div class="service-item">
-      <h3 class="font-feature-1"><%= service.name %></h3>
-      <%= link_to "View: #{service.name}", service_path(service), class: "btn btn-primary" %>
+      <!-- <h3 class="font-feature-1"><%= service.name %></h3> -->
+      <h3><%= link_to "#{service.name}", service_path(service) %></h3>
       <div style="margin: 5px" class="edit-office">
         <%= link_to "Edit: #{service.name}", edit_service_path(service), class: "btn btn-primary" %>
       </div>

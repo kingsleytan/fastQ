@@ -19,18 +19,18 @@ class ServicesController < ApplicationController
       render :index
     else
       flash[:danger] = @service.errors.full_messages
-      redirect_to new_service_path
+      redirect_to new_service_path(@branch)
     end
   end
 
   def edit
+    @branch = Branch.friendly.find(params[:id])
     @service = Service.friendly.find(params[:id])
-    authorize @service
+    # authorize @service
   end
 
   def update
     @service = Service.friendly.find(params[:id])
-    authorize @service
     if @service.update(service_params)
       redirect_to service_path(@service)
     else
@@ -39,8 +39,8 @@ class ServicesController < ApplicationController
   end
 
   def destroy
-    @service = service.friendly.find(params[:id])
-    authorize @service
+    @service = Service.friendly.find(params[:id])
+    # authorize @service
     if @service.destroy
       redirect_to services_path
     else

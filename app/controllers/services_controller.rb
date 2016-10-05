@@ -23,10 +23,8 @@ class ServicesController < ApplicationController
     @branch = Branch.friendly.find(params[:branch_id])
     @office = @branch.office
     @service = @branch.services.build(service_params)
-    # authorize @service
     if @service.save
       flash[:success] = "You've created a new service."
-      # binding.pry
       redirect_to office_branch_services_path(@service)
     else
       flash[:danger] = @service.errors.full_messages
@@ -35,33 +33,33 @@ class ServicesController < ApplicationController
   end
 
   def edit
-    @branch = Branch.friendly.find(params[:id])
-    @office = @branch.office
-
+    # @branch = Branch.friendly.find(params[:id])
+    # @office = @branch.office
     @service = Service.friendly.find(params[:id])
-    # authorize @service
+    # binding.pry
   end
 
   def update
+    # @branch = Branch.friendly.find(params[:id])
+    # @office = @branch.office
     @service = Service.friendly.find(params[:id])
-    @office = @branch.office
 
     if @service.update(service_params)
-      redirect_to service_path(@service)
+      redirect_to office_branch_services_path(@service)
     else
-      redirect_to edit_service_path(@service)
+      redirect_to edit_office_branch_service_path(@service)
     end
   end
 
   def destroy
+    # @branch = Branch.friendly.find(params[:id])
+    # @office = @branch.office
     @service = Service.friendly.find(params[:id])
-    @office = @branch.office
 
-    # authorize @service
     if @service.destroy
-      redirect_to services_path
+      redirect_to office_branch_services_path
     else
-      redirect_to service_path(@service)
+      redirect_to office_branch_service_path(@service)
     end
   end
 

@@ -31,6 +31,11 @@ class BranchesController < ApplicationController
     end
   end
 
+  def show
+    @office = Office.friendly.find(params[:office_id])
+    @branch = Branch.find(params[:id])
+  end
+
   def edit
     @branch = Branch.friendly.find(params[:id])
     @office = @branch.office

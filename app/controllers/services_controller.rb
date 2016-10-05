@@ -1,18 +1,18 @@
 class ServicesController < ApplicationController
 
   def index
-    @branch = Branch.includes(:services).find(params[:branch_id])
+    # @branch = Branch.includes(:services).find(params[:branch_id])
     @services = Service.all
   end
 
   def new
     @service = Service.new
-    authorize @service
+    # authorize @service
   end
 
   def create
-    @service = current_user.services.build(service_params)
-    authorize @service
+    @service = Service.new(service_params)
+    # authorize @service
     if @service.save
       flash[:success] = "You've created a new service."
       redirect_to services_path
@@ -50,6 +50,6 @@ class ServicesController < ApplicationController
   private
 
   def service_params
-    params.require(:service).permit(:type)
+    params.require(:service).permit(:category, :branch_id)
   end
 end

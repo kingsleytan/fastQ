@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 root to: 'landing#index'
 get :about, to: 'static_pages#about'
 
-resources :offices do
+resources :offices, except: [:show]  do
   resources :branches do
     resources :services
   end

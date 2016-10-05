@@ -1,35 +1,42 @@
 class ServicesController < ApplicationController
 
+  def show
+    # needs a show action
+  end
+
   def index
-    # @branch = Branch.includes(:services).find(params[:branch_id])
+    @branch = Branch.includes(:services).find_by(id: params[:branch_id])
     @services = Service.all
   end
 
   def new
+    @branch = Branch.friendly.find(params[:branch_id])
     @service = Service.new
     # authorize @service
   end
 
   def create
-    @service = Service.new(service_params)
+    @branch = Branch.friendly.find(params[:branch_id])
+    @service = @branch.services.build(service_params)
     # authorize @service
     if @service.save
       flash[:success] = "You've created a new service."
-      redirect_to services_path
+      binding.pry
+      redirect_to services_path(@branch)
     else
       flash[:danger] = @service.errors.full_messages
-      redirect_to new_service_path
+      redirect_to new_service_path(@branch)
     end
   end
 
   def edit
-    @service = Service.find(params[:id])
-    authorize @service
+    @branch = Branch.friendly.find(params[:id])
+    @service = Service.friendly.find(params[:id])
+    # authorize @service
   end
 
   def update
-    @service = Service.find(params[:id])
-    authorize @service
+    @service = Service.friendly.find(params[:id])
     if @service.update(service_params)
       redirect_to service_path(@service)
     else
@@ -38,8 +45,8 @@ class ServicesController < ApplicationController
   end
 
   def destroy
-    @service = service.find(params[:id])
-    authorize @service
+    @service = Service.friendly.find(params[:id])
+    # authorize @service
     if @service.destroy
       redirect_to services_path
     else
@@ -50,6 +57,10 @@ class ServicesController < ApplicationController
   private
 
   def service_params
+<<<<<<< HEAD
     params.require(:service).permit(:category, :branch_id)
+=======
+    params.require(:service).permit(:name)
+>>>>>>> master
   end
 end

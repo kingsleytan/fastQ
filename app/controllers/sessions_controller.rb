@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if user
       session[:id] = user.id
       flash[:success] = "Welcome back #{current_user.username}"
-      redirect_to user
+      redirect_to offices_path
     else
       flash[:danger] = "Error logging in"
       render :new

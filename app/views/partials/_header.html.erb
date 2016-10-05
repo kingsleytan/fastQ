@@ -20,8 +20,8 @@
         <li><%= link_to current_user.username.capitalize, user_path(current_user) %></li>
         <li><%= link_to "Logout", session_path(current_user), method: :delete %></li>
         <% else %>
-        <li><%= link_to "Register", new_user_path %></li>
-        <li><%= link_to "Login", new_session_path %></li>
+        <li><a href="#" data-toggle="modal" data-target="#signup">Register</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#login">Login</a></li>
         <% end %>
         <li><%= link_to "Subscribe", "/#subscribe" %></li>
       </ul>

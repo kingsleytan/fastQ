@@ -1,0 +1,18 @@
+<div class="modal fade" id="login">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h2 class="text-center">Login</h2>
+                <%= form_for(:user, url: sessions_path, html: { id: "user-login-form" } ) do |f| %>
+
+                <%= f.email_field :email, class: 'username', class: 'form-control', placeholder: "Username" %>
+                <%= f.password_field :password, class: 'password', class: 'form-control', placeholder: "Password" %>
+                <br>
+                <div class="button">
+                    <%= f.submit "Login", class: "btn btn-primary" %>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

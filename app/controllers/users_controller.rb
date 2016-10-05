@@ -6,21 +6,15 @@ class UsersController < ApplicationController
     @user = User.friendly.find(params[:id])
   end
 
-  def new
-    @user = User.new
-  end
-
   def create
     @user = User.new(user_params)
-    # binding.pry
-
     if @user.save
       session[:id] = @user.id
-      redirect_to @user
+      redirect_to offices_path
       flash[:success] = "Welcome to FastQ."
     else
       flash[:danger] = @user.errors.full_messages
-      render :new
+      redirect_to new_user_path
     end
   end
 

@@ -1,5 +1,6 @@
 class OfficesController < ApplicationController
 
+
   def index
     @offices = Office.order(:id).all
   end
@@ -30,7 +31,7 @@ class OfficesController < ApplicationController
     @office = Office.friendly.find(params[:id])
     authorize @office
     if @office.update(office_params)
-      redirect_to office_path(@office)
+      redirect_to offices_path
     else
       redirect_to edit_office_path(@office)
     end

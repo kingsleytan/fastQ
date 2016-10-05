@@ -12,6 +12,7 @@ class ServicesController < ApplicationController
   def new
     @branch = Branch.friendly.find(params[:branch_id])
     @service = Service.new
+    # authorize @service
   end
 
   def create
@@ -56,6 +57,10 @@ class ServicesController < ApplicationController
   private
 
   def service_params
+<<<<<<< HEAD
+    params.require(:service).permit(:category, :branch_id)
+=======
     params.require(:service).permit(:name)
+>>>>>>> master
   end
 end

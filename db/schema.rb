@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160929073738) do
+ActiveRecord::Schema.define(version: 20161005081521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20160929073738) do
     t.integer  "currentticket"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "service_id"
   end
 
   create_table "offices", force: :cascade do |t|
@@ -54,6 +55,18 @@ ActiveRecord::Schema.define(version: 20160929073738) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "slug"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "status",     default: 0
+    t.decimal  "total"
+    t.string   "bill_id"
+    t.string   "bill_url"
+    t.datetime "due_at"
+    t.datetime "paid_at"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "services", force: :cascade do |t|

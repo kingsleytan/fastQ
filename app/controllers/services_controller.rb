@@ -20,7 +20,6 @@ class ServicesController < ApplicationController
     # authorize @service
     if @service.save
       flash[:success] = "You've created a new service."
-      binding.pry
       redirect_to services_path(@branch)
     else
       flash[:danger] = @service.errors.full_messages

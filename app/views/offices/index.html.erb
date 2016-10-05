@@ -1,137 +1,33 @@
-<section class="service section_padding" id="service">
-		<div class="container">
-			<div class="row">
-				<div class="service_title section-title col-text-center text-center wow flipInX">
-					<h1>OFFICES</h1>
-				</div>
-				<div class="row text-center">
-					<div class="col-md-3 col-sm-6">
-						<div class="single_sercives row-margin-bottom">
-							<div class="single_sercives_icon">
-								<i class="fa fa-pie-chart"></i>
-							</div>
-							<div class="block-title">
-								<a href="#"><h4>Immigration Department of Malaysia</h4> </a>
-								<p>Jabatan Imigresen Malaysia</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<div class="single_sercives row-margin-bottom">
-							<div class="single_sercives_icon">
-								<i class="fa fa-print"></i>
-							</div>
-							<div class="block-title">
-								<a href="#"><h4>National Registration Department</h4> </a>
-								<p>Jabatan Pendaftaran Negara (JPN)</p>
-							</div>
-
-						</div>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<div class="single_sercives row-margin-bottom">
-							<div class="single_sercives_icon">
-								<i class="fa fa-camera-retro"></i>
-							</div>
-							<div class="block-title">
-								<a href="office_branches_path(office)"><h4>Post Office</h4> </a>
-								<p>Pos Malaysia</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<div class="single_sercives row-margin-bottom">
-							<div class="single_sercives_icon">
-								<i class="fa fa-phone"></i>
-							</div>
-							<div class="block-title">
-								<a href="#"><h4>TM</h4> </a>
-								<p>Telekom Malaysia Berhad (TM)</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<div class="single_sercives">
-							<div class="single_sercives_icon">
-								<i class="fa fa-key"></i>
-							</div>
-							<div class="block-title">
-								<a href="#"><h4>University Hospital</h4> </a>
-								<p>Hospital University Malaya</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<div class="single_sercives">
-							<div class="single_sercives_icon">
-								<i class="fa fa-tasks"></i>
-							</div>
-							<div class="block-title">
-								<a href="#"><h4>Pasta Zanmai</h4> </a>
-								<p>Sushi</p>
-							</div>
-
-						</div>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<div class="single_sercives">
-							<div class="single_sercives_icon">
-								<i class="fa fa-suitcase"></i>
-							</div>
-							<div class="block-title">
-								<a href="#"><h4>Maybank</h4> </a>
-								<p>Banking</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<div class="single_sercives">
-							<div class="single_sercives_icon">
-								<i class="fa fa-globe"></i>
-							</div>
-							<div class="block-title">
-								<a href="#"><h4>Municiple Council</h4></a>
-								<p>Majid Perbandaran</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-
-
-<!-- <% provide(:title, "Offices") %>
 <% provide(:title, "Offices") %>
-<h2 div class="jumbotron text-center">Which Office Are you Looking For?</h2>
-
-<div class="offices">
-  <div class="background">
-    <h1 style="color: white; font-size: 50px">All Offices</h1>
-  </div>
-
-  <div class="office-array text-center">
-    <% @offices.each do |office| %>
-    <div class="office-item">
-      <!-- <h3 class="font-feature-1"><%= office.company %></h3> -->
-      <h2><%= link_to "#{office.company} - Branches", office_branches_path(office) %></h3>
-      <div style="margin: 5px" class="edit-office">
-        <br>
-        <%= link_to "Edit: #{office.company}", edit_office_path(office), class: "btn btn-info" %>
+<section class="service section_padding" id="service">
+  <div class="container">
+    <div class="row">
+      <div class="service_title section-title col-text-center text-center wow flipInX">
+        <h1>OFFICES</h1>
       </div>
     </div>
-    <% end %>
-    <div style="margin: 30px" class="form-group text-center">
-      <%= link_to "Add new office", new_office_path, class: "btn btn-success" %>
+      <div class="row text-center">
+<% @offices.each do |office| %>
+<div class="col-md-3 col-sm-6">
+  <div class="single_sercives row-margin-bottom">
+    <div class="single_sercives_icon">
+      <i class="fa fa-pie-chart"></i>
+    </div>
+    <div class="block-title">
+      <div class="office-item">
+        <h2><%= link_to "#{office.company} - Branches", office_branches_path(office) %></h3>
+          <div style="margin: 5px" class="edit-office">
+            <br>
+            <%= link_to "Edit: #{office.company}", edit_office_path(office), class: "btn btn-info" %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <% end %>
 </div>
-
-<div class="grid">
-  <div class="grid-item">...</div>
-  <div class="grid-item grid-item--width2">...</div>
-  <div class="grid-item">...</div>
-
 </div>
+<div style="margin: 30px" class="form-group text-center">
+  <%= link_to "Add new office", new_office_path, class: "btn btn-success" %>
+</div>
+</section>

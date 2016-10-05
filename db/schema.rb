@@ -21,6 +21,18 @@ ActiveRecord::Schema.define(version: 20160929073738) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "add_slug_to_offices", force: :cascade do |t|
+    t.string   "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "add_slug_to_services", force: :cascade do |t|
+    t.string   "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "branches", force: :cascade do |t|
     t.string   "name"
     t.integer  "office_id"
@@ -67,6 +79,7 @@ ActiveRecord::Schema.define(version: 20160929073738) do
   create_table "tickets", force: :cascade do |t|
     t.integer  "number"
     t.integer  "service_id"
+    t.integer  "office_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

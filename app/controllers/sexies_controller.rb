@@ -1,2 +1,0 @@
-class SexiesController < ApplicationController
-end

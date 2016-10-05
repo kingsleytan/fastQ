@@ -8,7 +8,7 @@
     <div class="service-item">
       <h3><%= link_to "#{service.name} - Queue", office_branch_service_path(@office, @branch, service)%></h3>
       <div style="margin: 5px" class="edit-office">
-        <%= link_to "Edit", '#', class: "btn btn-primary" %>
+        <%= link_to "Edit", edit_office_branch_service_path(@office, @branch, service), class: "btn btn-primary" %>
       </div>
     </div>
     <% end %>

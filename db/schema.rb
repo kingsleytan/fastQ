@@ -11,22 +11,11 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20161004035153) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "add_slug_to_branches", force: :cascade do |t|
-    t.string   "slug"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "add_slug_to_offices", force: :cascade do |t|
-    t.string   "slug"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "add_slug_to_services", force: :cascade do |t|
     t.string   "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -71,14 +60,13 @@ ActiveRecord::Schema.define(version: 20161004035153) do
     t.integer  "branch_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "category"
+    t.string   "name"
     t.string   "slug"
   end
 
   create_table "tickets", force: :cascade do |t|
     t.integer  "number"
     t.integer  "service_id"
-    t.integer  "office_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

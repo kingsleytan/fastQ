@@ -4,9 +4,10 @@ root to: 'landing#index'
 get :about, to: 'static_pages#about'
 
 resources :offices, except: [:show] do
-  resources :branches
+  resources :branches do
+    resources :services
+  end
 end
-resources :services
 resources :tickets
 resources :products
 

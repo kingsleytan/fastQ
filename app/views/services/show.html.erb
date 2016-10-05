@@ -6,12 +6,17 @@
 
 <div class="text-center">
 <h2>
-    Current Ticket : 2005
+    Current Serving Number : 2005
 </h2>
 <br>
 <h2>
-    Your Ticket : 2010
+    Current Ticket : 2010
 </h2>
 
-<%= link_to "Buy a Ticket", '#', class: 'btn btn-success' %>
-</div>
+<!-- <a href="#" class="btn btn-success">Buy a Ticket</a>
+</ul> -->
+
+<%= form_for @order do |f| %>
+  <%= f.hidden_field :total, value: 1.00 %>
+  <%= f.submit 'Checkout' %>
+  <% end %>

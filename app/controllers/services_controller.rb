@@ -4,6 +4,7 @@ class ServicesController < ApplicationController
     @branch = Branch.includes(:services).friendly.find(params[:branch_id])
     @office = @branch.office
     @service = Service.friendly.find(params[:id])
+    @order = Order.new
   end
 
   def index

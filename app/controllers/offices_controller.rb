@@ -1,14 +1,13 @@
 class OfficesController < ApplicationController
 
-
   def index
     @offices = Office.order(:id).all
   end
 
-  def new
-    @office = Office.new
-    authorize @office
-  end
+  # def new
+  #   @office = Office.new
+  #   authorize @office
+  # end
 
   def create
     @office = Office.new(office_params)

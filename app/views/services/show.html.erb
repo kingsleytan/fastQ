@@ -1,22 +1,20 @@
 <% provide(:title, "#{@service.name}") %>
 
 <div class="jumbotron text-center">
-    <p><%= "#{@service.name}'s Queue" %></p>
+    <h2><%= "#{@service.name}'s Queue" %></h2>
 </div>
 
 <div class="text-center">
-<h2>
+<h3>
     Current Ticket : 2005
-</h2>
+</h3>
 <br>
-<h2>
+<h3>
     Your Ticket : 2010
-</h2>
-
-<br />
-<h4>Current Time : 2.30pm</h4>
+</h3>
+<h3>Current Time : 2.30pm</h3>
 <h3>Estimated Time To Your Turn ~ 20 minutes : 2.50pm</h3>
-
-<%= link_to "Buy a Ticket", '#', class: 'btn btn-success' %>
-<%= link_to "Back to Services", office_branch_services_path, class: 'btn btn-primary' %>
+<br />
+<%= link_to "Order Ticket", '#', class: 'btn btn-success btn-lg' %>
 </div>
+<%= link_to "Back to Services", office_branch_services_path, class: 'btn btn-primary' %>

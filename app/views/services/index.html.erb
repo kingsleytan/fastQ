@@ -1,20 +1,30 @@
-<% provide(:title, "#{@branch.name}'s Services") %>
-<h2 div class="jumbotron text-center"><%= "#{@branch.name} #{@office.company} Services" %></h2></div>
+<% provide(:title, "Branch Services") %>
 
+<section class="service section_padding" id="service">
+    <h2 div class="jumbotron text-center"><%= "#{@branch.name} #{@office.company} Services" %></h2>
 
-  <div class="service-array text-center">
-    <% @services.each do |service| %>
+    <div class="row text-center">
+        <% @services.each do |service| %>
 
-    <div class="service-item">
-      <h3><%= link_to "#{service.name} - Queue", office_branch_service_path(@office, @branch, service)%></h3>
-      <div style="margin: 5px" class="edit-office">
-        <%= link_to "Edit", edit_office_branch_service_path(@office, @branch, service), class: "btn btn-primary" %>
-      </div>
-    </div>
-    <% end %>
-      <div style="margin: 30px" class="form-group text-center">
-        <%= link_to "Add new service", new_office_branch_service_path, class: 'btn btn-success' %>
+        <div class="col-md-3 col-sm-6">
+            <div class="single_sercives row-margin-bottom">
+                <div class="single_sercives_icon">
+                    <i class="fa fa-pie-chart"></i>
+                </div>
+                <div class="block-title">
+                    <h3><%= link_to "#{service.name} - Queue", office_branch_service_path(@office, @branch, service)%></h3>
+                    <div style="margin: 5px" class="edit-office">
+                        <br/>
+                        <%= link_to "Edit: #{service.name}", edit_office_branch_service_path(@office, @branch, service), class: "btn btn-warning" %>
+                    </div>
+                </div>
+            </div>
+          </div>
+            <% end %>
         </div>
-        <%= link_to "Back to branches", office_branches_path(@branch.office), class: 'btn btn-info' %>
-  </div>
-</div>
+
+    <div style="margin: 30px" class="form-group text-center">
+        <%= link_to "New Service", new_office_branch_service_path, class: 'btn btn-success' %>
+        <%= link_to "Back to Branches", office_branches_path(@branch.office), class: 'btn btn-primary' %>
+    </div>
+</section>

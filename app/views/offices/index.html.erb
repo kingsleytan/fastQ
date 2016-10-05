@@ -1,24 +1,33 @@
 <% provide(:title, "Offices") %>
-<h2 div class="jumbotron text-center">Which Office Are you Looking For?</h2>
-
-<div class="offices">
-  <div class="background">
-    <h1 style="color: white; font-size: 50px">All Offices</h1>
-  </div>
-
-  <div class="office-array text-center">
-    <% @offices.each do |office| %>
-    <div class="office-item">
-      <!-- <h3 class="font-feature-1"><%= office.company %></h3> -->
-      <h2><%= link_to "#{office.company} - Branches", office_branches_path(office) %></h3>
-      <div style="margin: 5px" class="edit-office">
-        <br>
-        <%= link_to "Edit: #{office.company}", edit_office_path(office), class: "btn btn-info" %>
+<section class="service section_padding" id="service">
+  <div class="container">
+    <div class="row">
+      <div class="service_title section-title col-text-center text-center wow flipInX">
+        <h1>OFFICES</h1>
       </div>
     </div>
-    <% end %>
-    <div style="margin: 30px" class="form-group text-center">
-      <%= link_to "Add new office", new_office_path, class: "btn btn-success" %>
+      <div class="row text-center">
+<% @offices.each do |office| %>
+<div class="col-md-3 col-sm-6">
+  <div class="single_sercives row-margin-bottom">
+    <div class="single_sercives_icon">
+      <i class="fa fa-pie-chart"></i>
+    </div>
+    <div class="block-title">
+      <div class="office-item">
+        <h2><%= link_to "#{office.company} - Branches", office_branches_path(office) %></h3>
+          <div style="margin: 5px" class="edit-office">
+            <br>
+            <%= link_to "Edit: #{office.company}", edit_office_path(office), class: "btn btn-info" %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <% end %>
 </div>
+</div>
+<div style="margin: 30px" class="form-group text-center">
+  <%= link_to "Add new office", new_office_path, class: "btn btn-success" %>
+</div>
+</section>

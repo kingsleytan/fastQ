@@ -1,25 +1,44 @@
 <% provide(:title, "Edit #{@office.company}") %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="edit">
+                <h1 class="text-center">
+                    Update Your Office Here
+                </h1>
 
-<div class="edit">
-  <h1 class="text-center">
-    Update Your Office Here
-  </h1>
+                <br/>
+                <div class="form-edit">
+                    <%= form_for(@office, url: office_path(@office), html: { id: "office-update-form" }) do |f| %>
 
-<br />
-  <div class="form-edit">
-    <%= form_for(@office, url: office_path(@office), html: { id: "office-update-form" }) do |f| %>
+                    <div class="form-group">
+                        <h4>
+                            <%= f.label :company_field, "Edit #{@office.company}" %>
+                        </h4>
+                        <%= f.text_field :company, required: true, id: "office_company_field", class: 'form-control' %>
+                    </div>
 
-    <div class="form-group">
-      <h4> <%= f.label :company_field, "Edit #{@office.company}" %> </h4>
-      <%= f.text_field :company, required: true, id: "office_company_field", class: 'form-control' %>
+                    <div class="form-group">
+                        <div id="preview-image">
+                            <% if @office.image? %>
+                            <%= image_tag @office.image, class: "img-settings img-responsive" %>
+                            <% end %>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.file_field :image, id: "office_image_field", class: 'form-control image-uploader' %>
+                    </div>
+
+                    <div class="font-feature-edit text-center">
+                        <%= link_to "Delete office", office_path(@office), method: :delete, class: "btn btn-danger", data: { confirm: "Delete?"} %>
+                        <%= f.submit "Update office", class: "btn btn-success  btn-lg" %>
+                        <%= link_to "Cancel", offices_path, class: "btn btn-info"%>
+                    </div>
+                    <% end %>
+                </div>
+
+            </div>
+        </div>
     </div>
-
-    <div class="font-feature-edit text-center">
-      <%= link_to "Delete office", office_path(@office), method: :delete, class: "btn btn-danger", data: { confirm: "Delete?"} %>
-      <%= f.submit "Update office", class: "btn btn-success  btn-lg" %>
-      <%= link_to "Cancel", offices_path, class: "btn btn-info"%>
-    </div>
-    <% end %>
-  </div>
-
 </div>

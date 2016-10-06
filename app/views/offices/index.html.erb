@@ -1,31 +1,30 @@
 <% provide(:title, "Offices") %>
 <section class="service section_padding" id="service">
-  <div class="container">
-    <div class="row">
-      <div class="service_title section-title col-text-center text-center wow flipInX">
-        <h1>Available Offices</h1>
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="service_title section-title col-text-center text-center wow flipInX">
+                <h1>Available Offices</h1>
+            </div>
+        </div>
+        <br/>
+        <div class="row text-center">
+            <% @offices.each do |office| %>
+            <div class="col-md-3 col-sm-6">
+                <div class="single_sercives row-margin-bottom">
+                    <%= image_tag(office.image, class: 'img-responsive center-block') %>
+                    <div class="block-title">
+                        <h2><%= link_to "#{office.company} - Branches", office_branches_path(office) %></h3>
+                        <div style="margin: 5px" class="edit-office">
+                            <br>
+                            <!-- <%= link_to "Edit: #{office.company}", edit_office_path(office), class: "btn btn-warning" %> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% end %>
+        </div>
     </div>
-      <div class="row text-center">
-<% @offices.each do |office| %>
-<div class="col-md-3 col-sm-6">
-  <div class="single_sercives row-margin-bottom">
-    <div class="single_sercives_icon">
-      <i class="fa fa-pie-chart"></i>
+    <div style="margin: 30px" class="form-group text-center">
+        <!-- <%= link_to "New Office", new_office_path, class: "btn btn-success" %> -->
     </div>
-    <div class="block-title">
-        <h2><%= link_to "#{office.company} - Branches", office_branches_path(office) %></h3>
-          <div style="margin: 5px" class="edit-office">
-            <br>
-            <%= link_to "Edit: #{office.company}", edit_office_path(office), class: "btn btn-warning" %>
-          </div>
-      </div>
-    </div>
-  </div>
-  <% end %>
-</div>
-</div>
-<div style="margin: 30px" class="form-group text-center">
-  <%= link_to "New Office", new_office_path, class: "btn btn-success" %>
-</div>
 </section>

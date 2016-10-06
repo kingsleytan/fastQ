@@ -11,7 +11,8 @@ before_action :authenticate!
 
   def create
     @order = current_user.orders.build(order_params)
-    @order.price = 5.00
+    @order.total = 5.00
+    @order.ticket_id = 
     # @order = Order.create(total: params[:totalprice], user_id: params[:user_id])
     if @order.save
       @bill = Billplz.create_bill_for(@order)
@@ -25,7 +26,7 @@ before_action :authenticate!
 
   private
   def order_params
-    params.require(:order).permit(:user_id, :status, :total, :bill_id, :bill_url, :due_at, :paid_at)
+    params.require(:order).permit(:user_id, :status, :total, :bill_id, :bill_url, :due_at, :paid_at, :ticket_id)
   end
 
 end

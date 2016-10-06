@@ -1,55 +1,64 @@
 class ServicesController < ApplicationController
 
   def show
-    # needs a show action
+    @branch = Branch.includes(:services).friendly.find(params[:branch_id])
+    @office = @branch.office
+    @service = Service.friendly.find(params[:id])
   end
 
   def index
-    @branch = Branch.includes(:services).find_by(id: params[:branch_id])
-    @services = Service.all
+    @branch = Branch.includes(:services).friendly.find(params[:branch_id])
+    @office = @branch.office
+    @services = @branch.services
   end
 
   def new
     @branch = Branch.friendly.find(params[:branch_id])
+    @office = @branch.office
     @service = Service.new
   end
 
   def create
     @branch = Branch.friendly.find(params[:branch_id])
+    @office = @branch.office
     @service = @branch.services.build(service_params)
-    # authorize @service
     if @service.save
       flash[:success] = "You've created a new service."
-      binding.pry
-      redirect_to services_path(@branch)
+      redirect_to office_branch_services_path(@service)
     else
       flash[:danger] = @service.errors.full_messages
-      redirect_to new_service_path(@branch)
+      redirect_to new_office_branch_service_path
     end
   end
 
   def edit
-    @branch = Branch.friendly.find(params[:id])
+    # @branch = Branch.friendly.find(params[:id])
+    # @office = @branch.office
     @service = Service.friendly.find(params[:id])
-    # authorize @service
+    # binding.pry
   end
 
   def update
+    # @branch = Branch.friendly.find(params[:id])
+    # @office = @branch.office
     @service = Service.friendly.find(params[:id])
+
     if @service.update(service_params)
-      redirect_to service_path(@service)
+      redirect_to office_branch_services_path(@service)
     else
-      redirect_to edit_service_path(@service)
+      redirect_to edit_office_branch_service_path(@service)
     end
   end
 
   def destroy
+    # @branch = Branch.friendly.find(params[:id])
+    # @office = @branch.office
     @service = Service.friendly.find(params[:id])
-    # authorize @service
+
     if @service.destroy
-      redirect_to services_path
+      redirect_to office_branch_services_path
     else
-      redirect_to service_path(@service)
+      redirect_to office_branch_service_path(@service)
     end
   end
 

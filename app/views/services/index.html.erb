@@ -15,7 +15,7 @@
                     <h3><%= link_to "#{service.name} - Queue", office_branch_service_path(@office, @branch, service)%></h3>
                     <div style="margin: 5px" class="edit-office">
                         <br/>
-                        <%= link_to "Edit: #{service.name}", edit_office_branch_service_path(@office, @branch, service), class: "btn btn-warning" %>
+                        <!-- <%= link_to "Edit: #{service.name}", edit_office_branch_service_path(@office, @branch, service), class: "btn btn-warning" %> -->
                     </div>
                 </div>
             </div>
@@ -24,7 +24,7 @@
         </div>
 
     <div style="margin: 30px" class="form-group text-center">
-        <%= link_to "New Service", new_office_branch_service_path, class: 'btn btn-success' %>
+        <!-- <%= link_to "New Service", new_office_branch_service_path, class: 'btn btn-success' %> -->
         <%= link_to "Back to Branches", office_branches_path(@branch.office), class: 'btn btn-primary' %>
     </div>
 </section>

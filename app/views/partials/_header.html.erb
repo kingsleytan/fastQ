@@ -25,6 +25,9 @@
             Account <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
+          <%  if current_user.admin? %>
+            <li><%= link_to "Admin Panel", "/admin" %></li>
+            <% end %>
             <li><%= link_to "Profile", user_path(current_user) %></li>
             <li><%= link_to "Tickets", '#' %></li>
             <li class="divider"></li>

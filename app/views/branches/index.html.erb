@@ -15,7 +15,7 @@
                     <h4><%= branch.description %></h4>
                     <div style="margin: 5px" class="edit-branch">
                         <br/>
-                        <%= link_to "Edit: #{branch.name}", edit_office_branch_path(branch.office, branch), class: "btn btn-warning" %>
+                        <!-- <%= link_to "Edit: #{branch.name}", edit_office_branch_path(branch.office, branch), class: "btn btn-warning" %> -->
                     </div>
                 </div>
             </div>
@@ -24,7 +24,7 @@
     </div>
 
     <div style="margin: 30px" class="form-group text-center">
-        <%= link_to "New Branch", new_office_branch_path(@office, @branch), class: "btn btn-success" %>
+        <!-- <%= link_to "New Branch", new_office_branch_path(@office, @branch), class: "btn btn-success" %> -->
         <%= link_to "Back to Offices", offices_path, class: 'btn btn-primary' %>
     </div>
 </section>

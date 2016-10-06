@@ -19,9 +19,11 @@
 <%= link_to "Buy a Ticket", '#', class: 'btn btn-success' %>
 <%= link_to "Back to Services", office_branch_services_path, class: 'btn btn-primary' %>
 
-<%= form_for @order do |f| %>
+
+<%= form_for(@order, url: orders_path, html: { id: "Checkout-update-form" }) do |f| %>
   <%= f.hidden_field :total, value: 1.00 %>
   <%= f.submit 'Checkout' %>
   <% end %>
-  
+
+
 </div>

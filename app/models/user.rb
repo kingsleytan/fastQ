@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   enum role: [:user, :moderator, :admin]
   has_many :tickets
+  has_many :orders
 
   before_save { self.email = email.downcase }
 

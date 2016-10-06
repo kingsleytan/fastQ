@@ -4,10 +4,26 @@
     <p><%= "#{@service.name}'s Queue" %></p>
 </div>
 
+<div class="text-center">
 <h2>
-    Current Ticket : 2005
+    Current Serving Number : 2005
 </h2>
 <br>
 <h2>
-    Your Ticket : 2010
+    Current Ticket : 2010
 </h2>
+<br />
+<h4>Current Time : 2.30pm</h4>
+<h3>Estimated Time To Your Turn ~ 20 minutes : 2.50pm</h3>
+
+<%= link_to "Buy a Ticket", '#', class: 'btn btn-success' %>
+<%= link_to "Back to Services", office_branch_services_path, class: 'btn btn-primary' %>
+
+
+<%= form_for(@order, url: orders_path, html: { id: "Checkout-update-form" }) do |f| %>
+  <%= f.hidden_field :total, value: 1.00 %>
+  <%= f.submit 'Checkout' %>
+  <% end %>
+
+
+</div>

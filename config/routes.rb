@@ -4,15 +4,18 @@ root to: 'landing#index'
 get :about, to: 'static_pages#about'
 
 resources :offices, except: [:show] do
-  resources :branches
+  resources :branches do
+    resources :services
+  end
 end
-resources :services
 resources :tickets
 resources :products
 
 resources :users, only: [:show, :new, :edit, :create, :update]
 resources :sessions, only: [:new, :create, :destroy]
 resources :password_resets, only: [:new, :create, :edit, :update]
+
+resources :orders, only: [:new, :create, :show]
 
 # for Braintree checkout
   get :checkout, to: "checkout#show"

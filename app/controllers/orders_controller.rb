@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-before_action :authenticate_user!
+before_action :authenticate!
 
   def index
     @orders = Order.all
@@ -10,12 +10,12 @@ before_action :authenticate_user!
   end
 
   def create
-    @order = current_user.orders.new(order_params)
+    @order = current_user.orders.build(order_params)
+    @order.price = 5.00
     # @order = Order.create(total: params[:totalprice], user_id: params[:user_id])
     if @order.save
       @bill = Billplz.create_bill_for(@order)
       @order.update_attributes(bill_id: @bill.parsed_response['id'], bill_url: @bill.parsed_response['url'])
-      cookies.delete :cart
       redirect_to @bill.parsed_response['url']
     else
       render :new

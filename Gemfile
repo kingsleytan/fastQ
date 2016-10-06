@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'httparty'
+
+gem 'whenever', require: false
+
 gem 'rufus-scheduler'
 
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'

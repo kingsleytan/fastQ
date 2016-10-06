@@ -12,10 +12,6 @@ class OrdersController < ApplicationController
   def create
     @order = current_user.orders.build(order_params)
     @order.total = 5.00
-    @service = Service.friendly.find(params[:id])
-    @currentticket = Lineup.where(service_id: @service.id).last.currentticket
-    @ticket = Ticket.build(params[number: @currentticket + 1])
-    @order.ticket_id =
     # @order = Order.create(total: params[:totalprice], user_id: params[:user_id])
     if @order.save
       @bill = Billplz.create_bill_for(@order)

@@ -4,6 +4,9 @@ class ServicesController < ApplicationController
     @branch = Branch.includes(:services).friendly.find(params[:branch_id])
     @office = @branch.office
     @service = Service.friendly.find(params[:id])
+    @order = Order.new
+    @currentticket = Lineup.where(service_id: @service.id).last.currentticket
+    @currentqueue = Lineup.where(service_id: @service.id).last.currentqueue
   end
 
   def index

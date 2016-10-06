@@ -21,18 +21,6 @@ ActiveRecord::Schema.define(version: 20161006032217) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "add_slug_to_offices", force: :cascade do |t|
-    t.string   "slug"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "add_slug_to_services", force: :cascade do |t|
-    t.string   "slug"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "branches", force: :cascade do |t|
     t.string   "name"
     t.integer  "office_id"
@@ -59,6 +47,7 @@ ActiveRecord::Schema.define(version: 20161006032217) do
     t.integer  "currentticket"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "service_id"
   end
 
   create_table "offices", force: :cascade do |t|
@@ -67,6 +56,19 @@ ActiveRecord::Schema.define(version: 20161006032217) do
     t.datetime "updated_at", null: false
     t.string   "slug"
     t.string   "image"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "status",     default: 0
+    t.decimal  "total"
+    t.string   "bill_id"
+    t.string   "bill_url"
+    t.datetime "due_at"
+    t.datetime "paid_at"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "ticket_id"
   end
 
   create_table "services", force: :cascade do |t|
@@ -80,7 +82,6 @@ ActiveRecord::Schema.define(version: 20161006032217) do
   create_table "tickets", force: :cascade do |t|
     t.integer  "number"
     t.integer  "service_id"
-    t.integer  "office_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

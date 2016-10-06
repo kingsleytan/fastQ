@@ -1,15 +1,15 @@
 <% provide(:title, @user.username.capitalize) %>
 <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
+  <aside class="col-md-4 col-md-offset-4">
+    <section class="user_info text-center">
       <h1>
-        <%= gravatar_for @user %>
-        <%= @user.username.capitalize %>
+        <p><%= gravatar_for @user %></p>
+        <p><%= @user.username.capitalize %></p>
+        <p><%= @user.role %></p>
         <br>
         <%= @user.country %>
       </h1>
+      <%= link_to "Edit Profile", edit_user_path, class: 'btn btn-warning' %>
     </section>
  </aside>
 </div>
-
-<%= link_to "Edit Profile", edit_user_path, class: 'btn btn-warning' %>

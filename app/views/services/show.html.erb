@@ -5,16 +5,26 @@
 </div>
 
 <div class="text-center">
-<h3>
-    Current Ticket : 2005
-</h3>
-<br>
-<h3>
-    Your Ticket : 2010
-</h3>
-<h3>Current Time : 2.30pm</h3>
-<h3>Estimated Time To Your Turn ~ 20 minutes : 2.50pm</h3>
-<br />
-<%= link_to "Order Ticket", '#', class: 'btn btn-success btn-lg' %>
-</div>
-<%= link_to "Back to Services", office_branch_services_path, class: 'btn btn-primary' %>
+    <h2>
+        Current Serving Number :
+        <%=@currentqueue%>
+    </h2>
+    <br>
+    <h2>
+        Current Ticket :
+        <%=@currentticket%>
+    </h2>
+    <br/>
+    <h4>Current Time :
+        <%= Time.now.strftime('%B %d, %Y %I:%M') %></h4>
+
+    <h3>Estimated Time To Your Turn ~ 20 minutes : 2.50pm</h3>
+
+    <div class="">
+        <%= form_for(@order, url: orders_path, html: { id: "Checkout-update-form" }) do |f| %>
+        <%= f.hidden_field :total %>
+        <%= f.submit 'Checkout', class: 'btn btn-success' %>
+        <% end %>
+        <br>
+        <%= link_to "Back to Services", office_branch_services_path, class: 'btn btn-primary' %>
+    </div>

@@ -1,19 +1,30 @@
 <%= provide(:title, "#{@office.company}'s Branches") %>
-<h2 div class=" jumbotron text-center"><%= "#{@office.company} Branches"%></h2>
 
+<section class="service section_padding" id="service">
+    <h2 div class=" jumbotron text-center"><%= "#{@office.company} Branches"%></h2>
 
-<% @branches.each do |branch| %>
-  <div class="branch text-center">
-    <h3> <%= link_to "#{branch.name}", office_branch_services_path(@office, branch) %></h3>
-    <h5><%= branch.description %></h5>
-    <%= link_to "Edit: #{branch.name} - Branch", edit_office_branch_path(branch.office, branch), class: "btn btn-primary" %>
+    <div class="row text-center">
+        <% @branches.each do |branch| %>
+        <div class="col-md-3 col-sm-6">
+            <div class="single_sercives row-margin-bottom">
+                <div class="single_sercives_icon">
+                    <i class="fa fa-pie-chart"></i>
+                </div>
+                <div class="block-title">
+                    <h2><%= link_to "#{branch.name} - Services", office_branch_services_path(@office, branch) %></h2>
+                    <h4><%= branch.description %></h4>
+                    <div style="margin: 5px" class="edit-branch">
+                        <br/>
+                        <!-- <%= link_to "Edit: #{branch.name}", edit_office_branch_path(branch.office, branch), class: "btn btn-warning" %> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
 
-<% end %>
-
-
-<div style="margin: 30px" class="form-group text-center">
-  <%= link_to "Add new branch", new_office_branch_path(@office, @branch), class: "btn btn-success" %>
-</div>
-
-
-<%= link_to "Back to Offices", offices_path, class: 'btn btn-warning' %>
+    <div style="margin: 30px" class="form-group text-center">
+        <!-- <%= link_to "New Branch", new_office_branch_path(@office, @branch), class: "btn btn-success" %> -->
+        <%= link_to "Back to Offices", offices_path, class: 'btn btn-primary' %>
+    </div>
+</section>

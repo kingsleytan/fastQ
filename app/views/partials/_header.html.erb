@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <%= link_to root_path do %>
-        <%= image_tag "FastQ.png", class: "navbar-brand" %>
+        <%= image_tag "logotype.png", class: "navbar-brand" %>
       <% end %>
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-dropdown" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -16,16 +16,30 @@
     <div class="collapse navbar-collapse" id="header-dropdown">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "About", about_path %></li>
-        <li><%= link_to "Offices", offices_path %></li>
+
+        <li><%= link_to "Check Queue", offices_path %></li>
         <li><%= link_to "Products", products_path %></li>
+        <li><%= link_to "Subscribe", "/#subscribe" %></li>
+
         <% if current_user %>
-        <li><%= link_to current_user.username.capitalize, user_path(current_user) %></li>
-        <li><%= link_to "Logout", session_path(current_user), method: :delete %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Account <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+          <%  if current_user.admin? %>
+            <li><%= link_to "Admin Panel", "/admin" %></li>
+            <% end %>
+            <li><%= link_to "Profile", user_path(current_user) %></li>
+            <li><%= link_to "Tickets", '#' %></li>
+            <li class="divider"></li>
+            <li><%= link_to "Logout", session_path(current_user), method: :delete %></li>
+          </ul>
+        </li>
         <% else %>
         <li><a href="#" data-toggle="modal" data-target="#signup">Register</a></li>
         <li><a href="#" data-toggle="modal" data-target="#login">Login</a></li>
         <% end %>
-        <li><%= link_to "Subscribe", "/#subscribe" %></li>
       </ul>
     </div>
   </div>

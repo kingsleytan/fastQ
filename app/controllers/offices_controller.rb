@@ -1,6 +1,5 @@
 class OfficesController < ApplicationController
 
-
   def index
     @offices = Office.order(:id).all
   end
@@ -50,6 +49,6 @@ class OfficesController < ApplicationController
   private
 
   def office_params
-    params.require(:office).permit(:company)
+    params.require(:office).permit(:company, :image)
   end
 end

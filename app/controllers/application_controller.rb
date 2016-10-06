@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
     redirect_to request.referrer || main_app.root_path
   end
 
-
   def current_user
     return unless session[:id]
     @current_user ||= User.find_by(id: session[:id])

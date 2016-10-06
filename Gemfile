@@ -42,6 +42,14 @@ gem 'friendly_id', github: 'norman/friendly_id'
 
 gem 'country_select'
 
+gem 'responders'
+
+gem 'carrierwave',  '>= 1.0.0.beta', '< 2.0'
+
+gem 'mini_magick'
+
+gem 'rails_admin', '~> 1.0'
+
 group :production do
   gem 'rails_12factor'
 end

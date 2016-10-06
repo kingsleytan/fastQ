@@ -5,8 +5,12 @@ class ServicesController < ApplicationController
     @office = @branch.office
     @service = Service.friendly.find(params[:id])
     @order = Order.new
-    @currentticket = Lineup.where(service_id: @service.id).last.currentticket
-    @currentqueue = Lineup.where(service_id: @service.id).last.currentqueue
+    @ticket = Ticket.new
+
+    if @service.lineups.present?
+      @currentticket = Lineup.where(service_id: @service.id).last
+      @currentqueue = Lineup.where(service_id: @service.id).last
+    end
   end
 
   def index

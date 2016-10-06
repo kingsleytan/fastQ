@@ -1,6 +1,7 @@
 class Service < ApplicationRecord
   belongs_to :branch
   has_many :tickets
+  has_many :lineups
 
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]
@@ -14,4 +15,6 @@ class Service < ApplicationRecord
       self.slug = name.gsub(" ", "-")
     end
   end
+
+
 end

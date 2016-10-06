@@ -40,6 +40,10 @@ gem 'country_select'
 
 gem 'responders'
 
+gem 'carrierwave',  '>= 1.0.0.beta', '< 2.0'
+
+gem 'mini_magick'
+
 group :production do
   gem 'rails_12factor'
 end

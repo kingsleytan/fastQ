@@ -4,10 +4,10 @@ class OfficesController < ApplicationController
     @offices = Office.order(:id).all
   end
 
-  # def new
-  #   @office = Office.new
-  #   authorize @office
-  # end
+  def new
+    @office = Office.new
+    authorize @office
+  end
 
   def create
     @office = Office.new(office_params)
@@ -49,6 +49,6 @@ class OfficesController < ApplicationController
   private
 
   def office_params
-    params.require(:office).permit(:company)
+    params.require(:office).permit(:company, :image)
   end
 end

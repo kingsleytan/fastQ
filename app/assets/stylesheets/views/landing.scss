@@ -1,5 +1,12 @@
 
 .landing{
+
+.img-style{
+  height:100px;
+}
+
+
+
   .background {
     background-image: asset-url("waiting-chair.jpg");
     height: calc(100vh - 52px);
@@ -56,35 +63,57 @@
 
     }
 
-    /* ------------------------------------------------------------------ */
-    /* d. Features Section
-    /* ------------------------------------------------------------------ */
-
-    #features {
-       background: #fff;
-       padding-top: 96px;
-       padding-bottom: 78px;
-       overflow: hidden;
+    /*------------------------------------------------------------------
+    [6. Services ]
+    --------------------------------------------------------------------*/
+    .col-text-center{
+    	float: none !important;
+    	margin-left: auto !important;
+    	margin-right: auto !important;
     }
-    #features .feature {
-       margin-top: 30px;
-       margin-bottom: 54px;
+    .row-margin-bottom {
+      margin-bottom: 20%;
     }
-    #features .right {
-       padding-left: 32px;
-       float: right;
+    .single_sercives_icon {
+      border: 1px solid #E7B02D;
+      border-radius: 50%;
+      height: 100px;
+      margin-bottom: 30px;
+      margin-left: 30%;
+      position: relative;
+      width: 100px;
     }
-    #features .left {
-       padding-right: 32px;
-       float: left;
+    .single_sercives_icon i {
+      color: #E7B02D;
+      font-size: 54px;
+      padding-top: 22%;
     }
-    #features h3 {
-       font: 16px/24px 'montserrat-bold', sans-serif;
-       text-transform: uppercase;
-       letter-spacing: 1px;
-       color: #222;
+    .single_sercives_icon::after {
+      background: #E7B02D none repeat scroll 0 0;
+      border-radius: 50%;
+      content: "";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      transform: scale(0);
+      transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
+      width: 100%;
     }
-    .fluid-video-wrapper { margin-top: 18px; }
+    .single_sercives:hover .single_sercives_icon i{
+      color:#fff;
+    }
+    .single_sercives:hover .single_sercives_icon:after{
+      transform: scale(1);
+      z-index:-1;
+    }
+    .block-title a h4 {
+      color: #000;
+      margin-bottom: 10px;
+    }
+    .block-title a h4:hover {
+      color: #E7B02D;
+    }
 
 
     /*---------------------------------------

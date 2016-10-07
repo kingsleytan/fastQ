@@ -8,7 +8,7 @@
   </div>
 
   <section class="meow text-center">
-     <h1 style="color: #10999E; font-size: 21px">FASTQ AS NEXT GENERATION SOLUTION</h1>
+
 
   </section>
   <section class="about page" id="ABOUT">
@@ -30,11 +30,11 @@
 		<div class="container">
 			<div class="row">
 				<div class="team_title wow flipInX" data-wow-delay="0.3s">
-					
+
 				</div>
 				<div class="col-sm-4">
 					<div class="team_text wow fadeInLeft" data-wow-delay="0.3s">
-						<img src="images/team/team-member1.jpg" alt="" />
+						<%= image_tag "kingsir.jpg", style: "height: 235px" %>
 						<div class="team_single_text">
 							<span class="span_first">KINGSLEY TAN</span><br />
 							<span>FOUNDER AND CEO</span>
@@ -50,7 +50,7 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="team_text wow fadeInUp" data-wow-delay="0.3s">
-						<img src="images/team/team-member2.jpg" alt="" />
+						<%= image_tag "nicko.jpg", style: "height: 235px" %>
 						<div class="team_single_text">
 							<span class="span_first">NICHOLAS YAP</span><br />
 							<span>CO-FOUNDER AND CTO</span>
@@ -66,7 +66,7 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="team_text wow fadeInRight" data-wow-delay="0.3s">
-						<img src="images/team/team-member3.jpg" alt="" />
+						<%= image_tag "wermi.jpg", style: "height: 235px" %>
 						<div class="team_single_text">
 							<span class="span_first">ARWEN GOH</span><br />
 							<span>CO-FOUNDER AND CFO</span>
@@ -87,7 +87,9 @@
                 <div class="col-md-6">
                     <div class="about_phone wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
                     <!-- PHONE -->
-                        <img src="images/about_iphone.png" alt="">
+                        <%= image_tag "fqtab.png", class: "app_img", style: "height: 346px" %>
+                        <br>
+                        <%= image_tag "fqcheck2.jpg", class: "app_img", style: "height: 346px" %>
                     </div>
                 </div>
                 <div class="col-md-6  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
@@ -110,8 +112,8 @@
                             <!-- ICON -->
                             <div><i class="pe-7s-timer"></i></div>
                             <!-- HEADING DESCRIPTION -->
-                            <h3>Lorem ipsum dolor sit amet</h3>
-                            <p>Cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit.</p>
+                            <h3>Reduce Complaints</h3>
+                            <p>Timely updates and notifications alert customers as they move to the front of the queue. Fast and efficient appointment scheduling enables your customer to feel empowered and in control of their time.</p>
                         </div>
                         <!-- END SINGLE DESC -->
 
@@ -121,8 +123,8 @@
                             <!-- ICON -->
                             <div><i class="pe-7s-target"></i></div>
                             <!-- HEADING DESCRIPTION -->
-                            <h3>Lorem ipsum dolor sit amet</h3>
-                            <p>Cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit.</p>
+                            <h3>Eliminate ​Long Lines</h3>
+                            <p>QLess technology provides an effortless way for your customers to quickly access the services they need without standing in line.</p>
                         </div>
                         <!-- END SINGLE DESC -->
 
@@ -132,8 +134,8 @@
                             <!-- ICON -->
                             <div><i class="pe-7s-stopwatch"></i></div>
                             <!-- HEADING DESCRIPTION -->
-                            <h3>Lorem ipsum dolor sit amet</h3>
-                            <p>Cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit.</p>
+                            <h3>Enhance Communication and  Engagement</h3>
+                            <p>Our system offers bi-directional communication between your staff and customers. Likewise, our automated survey feature collects real-time feedback – providing valuable insight to identify procedural enhancements and drive improvement to customer services.</p>
                         </div>
                         <!-- END SINGLE DESC -->
 
@@ -146,7 +148,7 @@
   <section class="contact page" id="CONTACT">
         <div class="section_overlay">
           <ul>
-            <div class="container">
+            <div class="about-container">
                 <div class="col-md-10 col-md-offset-1 wow bounceIn">
                     <!-- Start Contact Section Title-->
                     <div class="section_title">
@@ -157,7 +159,7 @@
             </div>
 
             <div class="contact_form wow bounceIn">
-                <div class="container">
+                <div class="about-container">
 
                 <!-- START ERROR AND SUCCESS MESSAGE -->
                     <div class="form_error text-center">
@@ -193,7 +195,4 @@
         </div>
     </section>
     <!-- END CONTACT -->
-
-
-
 </div>

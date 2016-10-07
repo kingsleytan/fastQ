@@ -21,18 +21,6 @@ ActiveRecord::Schema.define(version: 20161007072444) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "add_slug_to_offices", force: :cascade do |t|
-    t.string   "slug"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "add_slug_to_services", force: :cascade do |t|
-    t.string   "slug"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "branches", force: :cascade do |t|
     t.string   "name"
     t.integer  "office_id"

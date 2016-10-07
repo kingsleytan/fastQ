@@ -14,13 +14,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body text-center">
-                <p>Current Queue:
-                    <%=@currentqueue.try(:currentqueue) %></p>
-                <p>Your Ticket :
-                    <%=@currentticket.try(:currentticket) %></p>
-                <p>Current Time :
-                    <%= Time.now.strftime('%B %d, %Y %I:%M %p') %></p>
-                <p>Estimated Time To Your Turn ~ 2.50pm</p>
+              <h2>Ticket Details</h2>
+                <h4>Current Queue:
+                    <%=@currentqueue.try(:currentqueue) %></h4>
+                <h4>Your Ticket :
+                    <%=@currentticket.try(:currentticket) %></h4>
+                <h4>Current Time :
+                    <%= Time.now.strftime('%B %d, %Y %I:%M %p') %></4>
+                <h4>Estimated Time To Your Turn ~ 2.50pm</h4>
 
                 Your Ticket Id:
                 <%= order.ticket_id %>

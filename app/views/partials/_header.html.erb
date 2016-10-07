@@ -31,7 +31,7 @@
             <li><%= link_to "Admin Panel", "/admin" %></li>
             <% end %>
             <li><%= link_to "Profile", user_path(current_user) %></li>
-            <li><%= link_to "Tickets", '#' %></li>
+            <li><%= link_to "Tickets", orders_path %></li>
             <li class="divider"></li>
             <li><%= link_to "Logout", session_path(current_user), method: :delete %></li>
           </ul>

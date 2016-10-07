@@ -1,5 +1,5 @@
 class Ticket < ApplicationRecord
-  belongs_to :service
-  belongs_to :user
+  belongs_to :service, optional: true
+  belongs_to :user, optional: true
   has_one :order
 end

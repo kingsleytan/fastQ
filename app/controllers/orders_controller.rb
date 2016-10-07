@@ -1,8 +1,12 @@
 class OrdersController < ApplicationController
-before_action :authenticate!
+  before_action :authenticate!
+
+  def show
+    @order = Order.find(params[:id])
+  end
 
   def index
-    @orders = Order.all
+    @orders = current_user.orders
   end
 
   def new
@@ -12,7 +16,6 @@ before_action :authenticate!
   def create
     @order = current_user.orders.build(order_params)
     @order.total = 5.00
-    @order.ticket_id = 
     # @order = Order.create(total: params[:totalprice], user_id: params[:user_id])
     if @order.save
       @bill = Billplz.create_bill_for(@order)

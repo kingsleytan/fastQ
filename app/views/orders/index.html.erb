@@ -1,11 +1,43 @@
-<h2>Ticket Orders</h2>
+<% provide(:title, "Ticket Orders") %>
+
+<h2 class="jumbotron text-center">Your Orders</h2>
 
 <% @orders.each do |order| %>
-  <div class="order">
-    <h3><%= order.office %></h3>
-    <h5><%= order.branch %></h5>
-    <h5><%= order.service %></h5>
-    <h5><%= order.ticket %></h5>
-    <!-- <%= link_to order.title, order_path(order) %> -->
-  </div>
+
+<div class="text-center">
+    <h2>
+        <a href="#" data-toggle="modal" data-target="#modal-<%=order.id%>"><%= "Ticket for #{order.ticket.service.name}: #{order.ticket.service.branch.office.company}, #{order.ticket.service.branch.name} Branch"%></a>
+    </h2>
+</div>
+
+<div class="modal fade" id="modal-<%=order.id%>">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+              <h2>Ticket Details</h2>
+                <h4>Current Queue:
+                    <%=@currentqueue.try(:currentqueue) %></h4>
+                <h4>Your Ticket :
+                    <%=@currentticket.try(:currentticket) %></h4>
+                <h4>Current Time :
+                    <%= Time.now.strftime('%B %d, %Y %I:%M %p') %></4>
+                <h4>Estimated Time To Your Turn ~ 2.50pm</h4>
+
+                Your Ticket Id:
+                <%= order.ticket_id %>
+                <br/>
+                Service:
+                <%= order.ticket.service.name %>
+                <br/>
+                Office Branch:
+                <%= order.ticket.service.branch.name %>
+                -
+                <%= order.ticket.service.branch.office.company %>
+                <br/>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>
 <% end %>

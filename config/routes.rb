@@ -16,7 +16,7 @@ resources :users, only: [:show, :new, :edit, :create, :update]
 resources :sessions, only: [:new, :create, :destroy]
 resources :password_resets, only: [:new, :create, :edit, :update]
 
-resources :orders, only: [:new, :create, :show]
+resources :orders, only: [:index, :new, :create, :show]
 
 # for Braintree checkout
   get :checkout, to: "checkout#show"

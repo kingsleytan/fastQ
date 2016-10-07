@@ -1,0 +1,39 @@
+<% provide(:title, "Tickets") %>
+
+<div class="row">
+    <aside class="col-md-6 col-md-offset-3">
+        <div class="text-center">
+            <h3>
+              <!-- Add current queue with generator -->
+                Current Serving Number :
+                <%=@currentqueue.try(:currentqueue) %>
+            </h3>
+            <h3>
+              <!-- Add user's ticket  -->
+                Your Ticket :
+                <%=@currentticket.try(:currentticket) %>
+            </h3>
+            <br/>
+            <h4>Current Time :
+                <%= Time.now.strftime('%B %d, %Y %I:%M %p') %></h4>
+
+            <!-- add estimated time Time.now + 20mins?     -->
+            <h4>Estimated Time To Your Turn ~ 2.50pm</h4>
+        </div>
+        <section class="order_info text-center">
+            <h4>
+                Your Ticket Id:
+                <%= @order.ticket_id %>
+                <br/>
+                Service:
+                <%= @order.ticket.service.name %>
+                <br/>
+                Office Branch:
+                <%= @order.ticket.service.branch.name %>
+                -
+                <%= @order.ticket.service.branch.office.company %>
+            </h4>
+            <br/>
+        </section>
+    </aside>
+</div>

@@ -10,12 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161006083959) do
+ActiveRecord::Schema.define(version: 20161006051406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "add_slug_to_branches", force: :cascade do |t|
+    t.string   "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "add_slug_to_offices", force: :cascade do |t|
     t.string   "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -49,10 +55,10 @@ ActiveRecord::Schema.define(version: 20161006083959) do
   end
 
   create_table "lineups", force: :cascade do |t|
-    t.integer  "currentqueue",  default: 2000
-    t.integer  "currentticket", default: 2000
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.integer  "currentqueue"
+    t.integer  "currentticket"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "service_id"
   end
 
@@ -88,6 +94,7 @@ ActiveRecord::Schema.define(version: 20161006083959) do
   create_table "tickets", force: :cascade do |t|
     t.integer  "number"
     t.integer  "service_id"
+    t.integer  "office_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

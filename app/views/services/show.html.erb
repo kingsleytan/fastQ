@@ -18,7 +18,7 @@
     <h4>Current Time :
         <%= Time.now.strftime('%B %d, %Y %I:%M %p') %></h4>
 
-    <h3>Estimated Time To Your Turn ~ 20 minutes : 2.50pm</h3>
+    <h3>Estimated Time To Your Turn ~ 20 minutes : <%= distance_of_time_in_words(Time.now, Time.now + 10.minutes) %></h3>
 
     <div class="">
       <%= form_for(@ticket, url: tickets_path, method: :post) do |f| %>

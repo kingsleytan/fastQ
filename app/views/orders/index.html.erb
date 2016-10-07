@@ -16,9 +16,9 @@
             <div class="modal-body text-center">
               <h2>Ticket Details</h2>
                 <h4>Current Queue:
-                    <%=@currentqueue.try(:currentqueue) %></h4>
+                    <%= Lineup.where(service_id: order.ticket.service.id).last.currentqueue%></h4>
                 <h4>Your Ticket :
-                    <%=@currentticket.try(:currentticket) %></h4>
+                    <%=order.ticket.number %></h4>
                 <h4>Current Time :
                     <%= Time.now.strftime('%B %d, %Y %I:%M %p') %></4>
                 <h4>Estimated Time To Your Turn ~ 2.50pm</h4>

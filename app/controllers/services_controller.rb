@@ -8,7 +8,7 @@ class ServicesController < ApplicationController
     @ticket = Ticket.new
 
     if @service.lineups.present?
-      @currentticket = Lineup.where(service_id: @service.id).last
+      @currentticket = Ticket.where(service_id: @service.id).last
       @currentqueue = Lineup.where(service_id: @service.id).last
     end
   end

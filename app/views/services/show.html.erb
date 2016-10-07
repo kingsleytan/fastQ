@@ -23,7 +23,8 @@
 
     <div class="">
       <%= form_for(@ticket, url: tickets_path, method: :post) do |f| %>
-        <%= f.hidden_field :number, value: @currentticket.currentticket += 1  %>
+        <%= f.hidden_field :number, value: @currentticket.currentticket += 1, service_id: @service.id  %>
+        <%= f.hidden_field :service_id, value: @service.id  %>
         <%= f.submit 'Get New Ticket', class: 'btn btn-success' %>
       <% end %>
 

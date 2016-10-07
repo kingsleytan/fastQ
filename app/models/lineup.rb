@@ -1,6 +1,6 @@
 class Lineup < ApplicationRecord
   belongs_to :service
-  has_many :tickets
+  belongs_to :ticket
 
   def self.add_one
     # add ticket to all services?

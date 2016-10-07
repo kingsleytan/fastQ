@@ -7,20 +7,28 @@
 <div class="text-center">
     <h2>
         Current Serving Number :
-        <%=@currentqueue%>
+
+        <%=@currentqueue.try(:currentqueue) %>
     </h2>
     <br>
     <h2>
         Current Ticket :
-        <%=@currentticket%>
+        <%=@currentticket.try(:currentticket) %>
     </h2>
     <br/>
     <h4>Current Time :
-        <%= Time.now.strftime('%B %d, %Y %I:%M') %></h4>
+        <%= Time.now.strftime('%B %d, %Y %I:%M %p') %></h4>
 
     <h3>Estimated Time To Your Turn ~ 20 minutes : 2.50pm</h3>
 
     <div class="">
+      <%= form_for(@ticket, url: tickets_path, method: :post) do |f| %>
+        <%= f.hidden_field :number, value: @currentticket.currentticket += 1  %>
+        <%= f.submit 'Get New Ticket', class: 'btn btn-success' %>
+      <% end %>
+
+      <br>
+
         <%= form_for(@order, url: orders_path, html: { id: "Checkout-update-form" }) do |f| %>
         <%= f.hidden_field :total %>
         <%= f.submit 'Checkout', class: 'btn btn-success' %>

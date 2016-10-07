@@ -1,11 +1,14 @@
-<h2>Ticket Orders</h2>
+<% provide(:title, "Ticket Orders") %>
 
-<% @orders.each do |order| %>
-  <div class="order">
-    <h3><%= order.office %></h3>
-    <h5><%= order.branch %></h5>
-    <h5><%= order.service %></h5>
-    <h5><%= order.ticket %></h5>
-    <!-- <%= link_to order.title, order_path(order) %> -->
-  </div>
-<% end %>
+<h2 class="jumbotron text-center">Your Orders</h2>
+
+<div class="row">
+    <aside class="col-md-6 col-md-offset-3">
+        <div class="text-center">
+            <% @orders.each do |order| %>
+            <h2><%= link_to "Ticket for #{order.ticket.service.name}: #{order.ticket.service.branch.office.company}, #{order.ticket.service.branch.name} Branch", order_path(order) %></h2>
+
+            <% end %>
+        </div>
+    </div>
+</div>

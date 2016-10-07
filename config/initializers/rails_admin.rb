@@ -1,18 +1,12 @@
 RailsAdmin.config do |config|
 
-  config.authorize_with do |controller|
-    # latest rails_admin is breaking pundit, hard code temporarily
-    current_user = User.find_by(id: session[:id])
-    redirect_to main_app.root_path unless current_user.try(:admin?)
-    # flash[:danger] = "You're not authorized!"
-  end
-  # config.current_user_method(&:current_user)
   ### Popular gems integration
 
   ## == Devise ==
   # config.authenticate_with do
   #   warden.authenticate! scope: :user
   # end
+  # config.current_user_method(&:current_user)
 
   ## == Cancan ==
   # config.authorize_with :cancan

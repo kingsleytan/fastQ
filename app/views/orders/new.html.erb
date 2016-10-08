@@ -1,0 +1,25 @@
+<% provide(:title, "Ticket Orders") %>
+
+<h2 class="jumbotron text-center">Your Orders</h2>
+
+<div class="">
+  <h2>Ticket Details</h2>
+  <h4>Current Queue:
+    <%= Lineup.where(service_id: @service.id).last.currentqueue%></h4>
+    <h4>Your Ticket: <%=@service.next_number %></h4>
+    <h4>Current Time: <%= Time.now.strftime('%B %d, %Y %I:%M %p') %></h4>
+    <h4>Estimated Time To Your Turn ~ <%= (Time.now + @interval).strftime('%I:%M %p') %>
+      (<%= distance_of_time_in_words(0, @interval) %>)
+    </h4>
+    <span>Service:<%= @service.name %></span>
+    <br/>
+    <span>Office Branch:<%= @service.branch.name %></span>
+    <span> - <%= @service.branch.office.company %> </span>
+    <br/>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <br/>
+</div>
+
+  <%= link_to "Checkout", orders_path(service_id: @service.id), method: :post, class: 'btn btn-success' %>
+  <br>
+  <%= link_to "Back to Services", office_branch_services_path(@service.branch, @service), class: 'btn btn-primary' %>

@@ -6,6 +6,7 @@ class ServicesController < ApplicationController
     @service = Service.friendly.find(params[:id])
     @order = Order.new
     @ticket = Ticket.new
+    @interval = 20.minutes
 
     if @service.lineups.present?
       @currentticket = Ticket.where(service_id: @service.id).last

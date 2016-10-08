@@ -18,21 +18,10 @@
     <h4>Current Time :
         <%= Time.now.strftime('%B %d, %Y %I:%M %p') %></h4>
 
-    <h3>Estimated Time To Your Turn ~ 20 minutes : 2.50pm</h3>
+    <h3>Estimated Time To Your Turn ~ <%= (Time.now + @interval).strftime('%I:%M %p') %> (<%= distance_of_time_in_words(0, @interval) %>) </h3>
+
+    <%=link_to "Get New Ticket", new_order_path(service_id: @service.id), class: 'btn btn-success'%>
 
     <div class="">
-      <%= form_for(@ticket, url: tickets_path, method: :post) do |f| %>
-        <%= f.hidden_field :number, value: @currentticket.number += 1  %>
-        <%= f.hidden_field :service_id, value: @service.id  %>
-        <%= f.submit 'Get New Ticket', class: 'btn btn-success' %>
-      <% end %>
-
-      <br>
-
-        <%= form_for(@order, url: orders_path, html: { id: "Checkout-update-form" }) do |f| %>
-        <%= f.hidden_field :total %>
-        <%= f.submit 'Checkout', class: 'btn btn-success' %>
-        <% end %>
-        <br>
         <%= link_to "Back to Services", office_branch_services_path, class: 'btn btn-primary' %>
     </div>

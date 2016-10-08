@@ -1,5 +1,9 @@
 .about{
 
+  .about-container{
+    width: inherit;
+  }
+
   .about-pic {
     background-image: asset-url("Waiting-room.jpg");
     height: calc(90vh - 52px);

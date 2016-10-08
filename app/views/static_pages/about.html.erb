@@ -8,7 +8,7 @@
   </div>
 
   <section class="meow text-center">
-     <h1 style="color: #10999E; font-size: 21px">FASTQ AS NEXT GENERATION SOLUTION</h1>
+
 
   </section>
   <section class="about page" id="ABOUT">
@@ -16,10 +16,18 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <!-- ABOUT US SECTION TITLE-->
-                <div class="section_title">
+                <div class="inner_about_title">
                     <h2>About Us</h2>
-                    <p>FastQ is a queue management system and a customer service.</p>
-                    We replace take-a-number systems and sign up sheet with tech based solution to eliminate line up by number.
+                    <p>Fast Q is an aggregator service platform that comes with smartphone application that display queue statistics for consumer services such as banking, hospital, government agencies, retail, restaurant and so much more. Fast Q provide an ecosystem around existing queueing system implementation.<br>
+
+                    <br>
+
+                    With Fast Q: <br>
+                    1. User can request for ticket remotely. <br>
+                    2. View the current call and its burn down rate while calculating how much time before their turn. <br>
+                    3. Pick up any dropped/cancelled ticket to legally jump queue. <br>
+                    4. Show more information on current place, and suggest where user can go for a quick walk.<br>
+                    5. Alarm user when their number is approaching. </p>
                 </div>
             </div>
 
@@ -30,43 +38,43 @@
 		<div class="container">
 			<div class="row">
 				<div class="team_title wow flipInX" data-wow-delay="0.3s">
-					
+
 				</div>
 				<div class="col-sm-4">
 					<div class="team_text wow fadeInLeft" data-wow-delay="0.3s">
-						<img src="images/team/team-member1.jpg" alt="" />
+						<%= image_tag "kingsir.jpg", style: "height: 235px" %>
 						<div class="team_single_text">
 							<span class="span_first">KINGSLEY TAN</span><br />
 							<span>FOUNDER AND CEO</span>
 							<div class="bg-yellow team_yellow"></div>
 							<div class="team_icon">
-								<a href="www.facebook.com"><i class="fa fa-facebook"></i></a>
+								<a href="https://www.facebook.com/king.simply"><i class="fa fa-facebook"></i></a>
 								<a href="www.twitter.com"><i class="fa fa-twitter"></i></a>
 								<a href="www.google-plus.com"><i class="fa fa-google-plus"></i></a>
 							</div>
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
+							<p>Kingsley is a CEO and entrepreneur in the software industry. For the past 10 years he has served as a senior executive and chief executive in early-stage startups through public company executive roles. Kingsley oversees all sales, marketing and finance operations for Fast Q and its products.</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="team_text wow fadeInUp" data-wow-delay="0.3s">
-						<img src="images/team/team-member2.jpg" alt="" />
+						<%= image_tag "nicko.jpg", style: "height: 235px" %>
 						<div class="team_single_text">
 							<span class="span_first">NICHOLAS YAP</span><br />
 							<span>CO-FOUNDER AND CTO</span>
 							<div class="bg-yellow team_yellow"></div>
 							<div class="team_icon">
-								<a href="www.facebook.com"><i class="fa fa-facebook"></i></a>
+								<a href="http://www.facebook.com"><i class="fa fa-facebook"></i></a>
 								<a href="www.twitter.com"><i class="fa fa-twitter"></i></a>
 								<a href="www.google-plus.com"><i class="fa fa-google-plus"></i></a>
 							</div>
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
+							<p>Until he took a hands-on role at Fast Q, Nicholas had been Head of IT & Marketing of Rockstar Games, Inc. Nicholas has a wealth of I.T and marketing experience. He joined Fast Q from TBWA/Media Arts Lab, where he served as Worldwide Group Account Director for the Apple and Nike account.</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="team_text wow fadeInRight" data-wow-delay="0.3s">
-						<img src="images/team/team-member3.jpg" alt="" />
+						<%= image_tag "wermi.jpg", style: "height: 235px" %>
 						<div class="team_single_text">
 							<span class="span_first">ARWEN GOH</span><br />
 							<span>CO-FOUNDER AND CFO</span>
@@ -76,7 +84,7 @@
 								<a href="www.twitter.com"><i class="fa fa-twitter"></i></a>
 								<a href="www.google-plus.com"><i class="fa fa-google-plus"></i></a>
 							</div>
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
+							<p> Before joining Fast Q, Arwen was with Google where she led product portfolio reviews to enable focus and growth. Throughout her career, Arwen has managed multiple M&A deals on both the buy and sell side, along with various rounds of financing and marketing. </p>
 						</div>
 					</div>
 				</div>
@@ -87,7 +95,9 @@
                 <div class="col-md-6">
                     <div class="about_phone wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
                     <!-- PHONE -->
-                        <img src="images/about_iphone.png" alt="">
+                        <%= image_tag "fqtab.png", class: "app_img", style: "height: 346px" %>
+                        <br> <br> <br>
+                        <%= image_tag "fqcheck2.jpg", class: "app_img", style: "height: 378px" %>
                     </div>
                 </div>
                 <div class="col-md-6  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
@@ -110,8 +120,8 @@
                             <!-- ICON -->
                             <div><i class="pe-7s-timer"></i></div>
                             <!-- HEADING DESCRIPTION -->
-                            <h3>Lorem ipsum dolor sit amet</h3>
-                            <p>Cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit.</p>
+                            <h3>Reduce Complaints</h3>
+                            <p>Timely updates and notifications alert customers as they move to the front of the queue. Fast and efficient appointment scheduling enables your customer to feel empowered and in control of their time.</p>
                         </div>
                         <!-- END SINGLE DESC -->
 
@@ -121,8 +131,8 @@
                             <!-- ICON -->
                             <div><i class="pe-7s-target"></i></div>
                             <!-- HEADING DESCRIPTION -->
-                            <h3>Lorem ipsum dolor sit amet</h3>
-                            <p>Cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit.</p>
+                            <h3>Eliminate ​Long Lines</h3>
+                            <p>Our technology provides an effortless way for you to quickly access the services they need without standing in line.</p>
                         </div>
                         <!-- END SINGLE DESC -->
 
@@ -132,8 +142,8 @@
                             <!-- ICON -->
                             <div><i class="pe-7s-stopwatch"></i></div>
                             <!-- HEADING DESCRIPTION -->
-                            <h3>Lorem ipsum dolor sit amet</h3>
-                            <p>Cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit.</p>
+                            <h3>Enhance Communication and Engagement</h3>
+                            <p>Our system offers bi-directional communication between you and the staff. Likewise, our automated survey feature collects real-time feedback – providing valuable insight to identify procedural enhancements and drive improvement to customer services.</p>
                         </div>
                         <!-- END SINGLE DESC -->
 
@@ -146,18 +156,18 @@
   <section class="contact page" id="CONTACT">
         <div class="section_overlay">
           <ul>
-            <div class="container">
+            <div class="about-container">
                 <div class="col-md-10 col-md-offset-1 wow bounceIn">
                     <!-- Start Contact Section Title-->
                     <div class="section_title">
                         <h2>Get in touch</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+
                     </div>
                 </div>
             </div>
 
             <div class="contact_form wow bounceIn">
-                <div class="container">
+                <div class="about-container">
 
                 <!-- START ERROR AND SUCCESS MESSAGE -->
                     <div class="form_error text-center">
@@ -193,7 +203,4 @@
         </div>
     </section>
     <!-- END CONTACT -->
-
-
-
 </div>

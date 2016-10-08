@@ -50,6 +50,8 @@ gem 'mini_magick'
 
 gem 'rails_admin', '~> 1.0'
 
+gem 'fog'
+
 group :production do
   gem 'rails_12factor'
 end

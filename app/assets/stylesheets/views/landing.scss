@@ -1,5 +1,12 @@
 
 .landing{
+
+.img-style{
+  height:100px;
+}
+
+
+
   .background {
     background-image: asset-url("waiting-chair.jpg");
     height: calc(100vh - 52px);
@@ -56,35 +63,68 @@
 
     }
 
-    /* ------------------------------------------------------------------ */
-    /* d. Features Section
-    /* ------------------------------------------------------------------ */
+    /*------------------------------------------------------------------
+    [6. Services ]
+    --------------------------------------------------------------------*/
+    .col-text-center{
+    	float: none !important;
+    	margin-left: auto !important;
+    	margin-right: auto !important;
+    }
+    .row-margin-bottom {
+      margin-bottom: 20%;
+    }
+    .single_sercives_icon {
+      border: 1px solid #E7B02D;
+      border-radius: 50%;
+      height: 100px;
+      margin-bottom: 30px;
+      margin-left: 30%;
+      position: relative;
+      width: 100px;
+    }
+    .single_sercives_icon i {
+      color: #E7B02D;
+      font-size: 54px;
+      padding-top: 22%;
+    }
+    .single_sercives_icon::after {
+      background: #E7B02D none repeat scroll 0 0;
+      border-radius: 50%;
+      content: "";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      transform: scale(0);
+      transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
+      width: 100%;
+    }
+    .single_sercives:hover .single_sercives_icon i{
+      color:#fff;
+    }
+    .single_sercives:hover .single_sercives_icon:after{
+      transform: scale(1);
+      z-index:-1;
+    }
+    .block-title a h4 {
+      color: #000;
+      margin-bottom: 10px;
+    }
+    .block-title a h4:hover {
+      color: #E7B02D;
+    }
 
-    #features {
-       background: #fff;
-       padding-top: 96px;
-       padding-bottom: 78px;
-       overflow: hidden;
+    .section-heading {
+        margin-bottom: 30px;
     }
-    #features .feature {
-       margin-top: 30px;
-       margin-bottom: 54px;
+
+    .section-heading-spacer {
+        float: left;
+        width: 200px;
+        border-top: 3px solid #f39c12;
     }
-    #features .right {
-       padding-left: 32px;
-       float: right;
-    }
-    #features .left {
-       padding-right: 32px;
-       float: left;
-    }
-    #features h3 {
-       font: 16px/24px 'montserrat-bold', sans-serif;
-       text-transform: uppercase;
-       letter-spacing: 1px;
-       color: #222;
-    }
-    .fluid-video-wrapper { margin-top: 18px; }
+
 
 
     /*---------------------------------------
@@ -128,7 +168,7 @@
 
     .how-it-works {
       background-color: #0d485e;
-      height: 75vh;
+      height: 68vh;
       width: 100%;
       background-position: 50% 90%;
       background-: no-repeat;
@@ -177,8 +217,8 @@
     }
 
     .client {
-      background-color: #f39c12;
-      height: 20vh;
+      background-color: #ffffff;
+      height: 28vh;
       width: 100%;
       background-position: 50% 90%;
       background-: no-repeat;
@@ -345,9 +385,11 @@
 }
 .subscribe .section_title h2{
 	color: #eaeaea;
+  text-align: center;
 }
 .subscribe .section_title p{
 	color: #a4a4a4;
+  text-align: center;
 }
 .subscribe_form {
     text-align: center;

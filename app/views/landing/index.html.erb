@@ -29,10 +29,14 @@
         <div class="col-md-3 col-sm-6">
           <div class="single_sercives row-margin-bottom">
             <div class="single_sercives_icon">
-              <i class="fa fa-university"></i>
+              <%= link_to(offices_path) do %>
+                <i class="fa fa-university"></i>
+              <% end %>
             </div>
             <div class="block-title">
-              <a href="#"><h4>Government</h4> </a>
+              <h4>
+                <%= link_to "Government", offices_path %>
+              </h4>
 
             </div>
           </div>
@@ -40,10 +44,14 @@
         <div class="col-md-3 col-sm-6">
           <div class="single_sercives row-margin-bottom">
             <div class="single_sercives_icon">
-              <i class="fa fa-money"></i>
+                <%= link_to(offices_path) do %>
+                  <i class="fa fa-money"></i>
+                <% end %>
             </div>
             <div class="block-title">
-              <a href="#"><h4>Banking</h4> </a>
+              <h4>
+                <%= link_to "Banking", offices_path %>
+              </h4>
 
             </div>
 
@@ -52,10 +60,14 @@
         <div class="col-md-3 col-sm-6">
           <div class="single_sercives row-margin-bottom">
             <div class="single_sercives_icon">
+              <%= link_to(offices_path) do %>
               <i class="fa fa-hospital-o"></i>
+              <% end %>
             </div>
             <div class="block-title">
-              <a href="#"><h4>Health Care</h4> </a>
+              <h4>
+                <%= link_to "Health Care", offices_path %>
+              </h4>
 
             </div>
           </div>
@@ -63,10 +75,15 @@
         <div class="col-md-3 col-sm-6">
           <div class="single_sercives row-margin-bottom">
             <div class="single_sercives_icon">
+              <%= link_to(offices_path) do %>
               <i class="fa fa-cutlery"></i>
+              <% end %>
             </div>
             <div class="block-title">
-              <a href="#"><h4>Restaurant</h4> </a>
+
+              <h4>
+                <%= link_to "Restaurant", offices_path %>
+              </h4>
 
             </div>
       </div>
@@ -83,14 +100,16 @@
               <div class="col-md-9">
                 <h2 class="feature-title text-center">
 
-                  Ready To Eliminate Lines? Don't Wait Any Longer.  <span class="typer" id="some-id" data-delay="100" data-delim=":" data-words="Elimating Line:Improving Service flow:Saving Time"
+                  With Fast Q, Everyone Can Buy Time Now! Anywhere. Anytime.  <span class="typer" id="some-id" data-delay="100" data-delim=":" data-words="Elimating Line:Improving Service flow:Saving Time"
                   data-colors="dark b;ue,black,orange"></span>
                   <span class="cursor" data-cursorDisplay="_" data-owner="some-id"></span>
                 </h2>
                 <script src="typer.js"></script>
                   </div>
               <div class="col-md-3">
-                  <a class="btn btn-primary btn-action" href="#" role="button">Get A Ticket Now</a>
+
+                  <%= link_to "Get A Ticket Now", offices_path, class:"btn btn-primary btn-action" %>
+
               </div>
           </div>
       </div>
@@ -210,10 +229,11 @@
 
   <div class="app">
     <div class="app-feature text-center">
-      <%= image_tag "fqmsg.png", alt: "msg", class: "app_img", style: "height: 346px" %>
+      <%= image_tag "fqmsg.png", alt: "msg", class: "app_img", style: "height: 400px" %>
     </div>
     <div class="app-feature text-center">
-      <h2>The Wait Is Over, Experience FastQ! </h2>
+      <h2 class="section-heading">The Wait Is Over, Experience FastQ! </h2>
+  
       <p class="text-muted"> Our technology makes everything easier to: <br>
       - Eliminate long lines and significantly reduce complaints <br>
       - Efficiently schedule and manage appointments <br>
@@ -224,7 +244,7 @@
       <p>OUR APP IS NOW AVAILABLE ON PLAY STORE </p>
 
       <b><b>
-      <a class="btn btn-primary btn-action" href="#" role="button">Download Now</a>
+      <a class="btn btn-primary btn-action" href="https://play.google.com" role="button">Download Now</a>
 
 
     </div>
@@ -260,7 +280,7 @@
                           <!-- DESCRIPTION -->
                           <h2> Sakib Kusma </h2>
                           <h4><span>Managing Director,</span> Immigration Department of Malaysia</h4>
-                          <p>““With Fast Q we had the smoothest fall semester ever over previous semesters — by a quantum leap!”</p>
+                          <p>“With Fast Q we had the smoothest fall semester ever over previous semesters — by a quantum leap!”</p>
                         </div>
                       </div>
                     </div>
@@ -276,7 +296,7 @@
                           <!-- DESCRIPTION -->
                           <h2>Siti Nurhaliza</h2>
                           <h4><span>Manager,</span> Post Malaysia</h4>
-                          <p>“I am being asked recommendations for queue management, and I recommend QLess.”</p>
+                          <p>“I am being asked why we become more and more efficient and asked recommendations for queue management, and I recommend Fast Q.”</p>
                         </div>
                       </div>
                     </div>
@@ -319,12 +339,6 @@
   </div>
   </div>
 
-  <!-- <div class="sitemap">
-    <div class="feature text-center">
-    <h2>FastQ</h2>
-    <h2>KEEPING THE WORLD IN GO!</h2>
-    </div>
-  </div> -->
 
   <section class="subscribe parallax subscribe-parallax" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
       <div class="section_overlay wow lightSpeedIn">
@@ -369,12 +383,6 @@
 
       </div>
   </section>
-  <!-- <section>
-    <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
-      <div class="grid-item werm-grid">sdfdsfds</div>
-      <div class="grid-item grid-item--width2">...</div>
-      <div class="grid-item">...</div>
-    </div>
-  </section> -->
+
 
 </div>

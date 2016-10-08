@@ -6,8 +6,9 @@ class OrdersController < ApplicationController
   end
 
   def index
-    @orders = current_user.orders
+    @orders = current_user.orders.where(status: 1)
     @interval = 20.minutes
+    # @service = @orders.service
   end
 
   def new
@@ -18,8 +19,9 @@ class OrdersController < ApplicationController
   def create
     @service = Service.find(params[:service_id])
     @currentticket = Ticket.where(service_id: @service.id).last
-    @ticket = Ticket.new({service_id: params[:service_id],
+    @ticket = Ticket.create({service_id: params[:service_id],
       number: @currentticket.number + 1})
+
     @order = current_user.orders.build({
       :status => 0,
       :total => 5.0,

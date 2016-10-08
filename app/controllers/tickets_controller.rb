@@ -4,7 +4,7 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new(ticket_params)
     if @ticket.save
       @ticket.lineup.update_attributes(service_id: @ticket.service_id)
-      redirect_to root_path
+      redirect_to new_order_path
     end
   end
 

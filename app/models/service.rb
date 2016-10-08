@@ -8,6 +8,15 @@ class Service < ApplicationRecord
 
   before_save :update_slug
 
+
+  def next_number
+    self.tickets.last.number + 1
+  end
+
+  def current_number
+    self.tickets.last.number
+  end
+  
   private
 
   def update_slug
@@ -15,6 +24,5 @@ class Service < ApplicationRecord
       self.slug = name.gsub(" ", "-")
     end
   end
-
 
 end
